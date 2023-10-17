@@ -35,9 +35,6 @@ class BookImport
     public function import(callable $callback): array
     {
         foreach ($this->books as $index => $book) {
-            if ($index > 10)
-                break;
-
             $callback($index + 1);
             if (empty($book['isbn'])) {
                 $this->addError('index: ' . $index);
