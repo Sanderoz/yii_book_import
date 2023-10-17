@@ -1,0 +1,49 @@
+version: '3.2'
+
+services:
+
+  nginx:
+    image: nginx:1.25.2
+    restart: always
+    container_name: nginx
+    ports:
+      - 8080:80
+      - 443:443
+    volumes:
+      - ./settings/nginx/default.conf:/etc/nginx/nginx.conf
+      - ./app:/var/www/html
+    depends_on:
+      - php
+
+  php:
+    build:
+      context: .
+      dockerfile: php.Dockerfile
+    container_name: php
+    restart: always
+    volumes:
+      - ./app:/var/www/html
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8
+    container_name: mysql
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=verysecret
+      - MYSQL_DATABASE=yii2advanced
+      - MYSQL_USER=yii2advanced
+      - MYSQL_PASSWORD=secret
+
+  rabbitmq:
+    image: rabbitmq:3.9.29-management
+    container_name: rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=mquser
+      - RABBITMQ_DEFAULT_PASS=mqpassword
+    ports:
+      - "5672:5672"
+      - "15672:15672"
