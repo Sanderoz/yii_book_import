@@ -2,59 +2,20 @@
 
 namespace backend\controllers;
 
-use common\models\LoginForm;
+use backend\models\LoginForm;
+use common\models\Messages;
+use common\models\Settings;
 use Yii;
+use yii\data\ActiveDataProvider;
 use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
-use yii\web\Controller;
+use yii\web\NotFoundHttpException;
 use yii\web\Response;
 
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends BaseController
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::class,
-                'rules' => [
-                    [
-                        'actions' => ['login', 'error'],
-                        'allow' => true,
-                    ],
-                    [
-                        'actions' => ['logout', 'index'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::class,
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
-        ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function actions()
-    {
-        return [
-            'error' => [
-                'class' => \yii\web\ErrorAction::class,
-            ],
-        ];
-    }
-
     /**
      * Displays homepage.
      *
@@ -65,40 +26,37 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
-    /**
-     * Login action.
-     *
-     * @return string|Response
-     */
-    public function actionLogin()
+    public function actionSettings()
     {
-        if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
+        $model = Settings::find()->all();
+        if ($data = Yii::$app->request->post() and count($data) > 1 and Yii::$app->request->validateCsrfToken()) {
+            foreach ($model as $setting) {
+                /**
+                 * @var Settings $setting
+                 */
+                if (isset($data[$setting->key]) and $setting->value != $data[$setting->key]) {
+                    $setting->value = $data[$setting->key];
+                    $setting->save();
+                }
+
+            }
         }
-
-        $this->layout = 'blank';
-
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        }
-
-        $model->password = '';
-
-        return $this->render('login', [
-            'model' => $model,
-        ]);
+        return $this->render('settings', ['model' => $model]);
     }
 
-    /**
-     * Logout action.
-     *
-     * @return Response
-     */
-    public function actionLogout()
+    public function actionMessages()
     {
-        Yii::$app->user->logout();
-
-        return $this->goHome();
+        return $this->render(
+            'messages',
+            [
+                'dataProvider' => new ActiveDataProvider([
+                    'query' => Messages::find(),
+                    'pagination' => [
+                        'pageSize' => 20,
+                    ],
+                ])
+            ]
+        );
     }
+
 }

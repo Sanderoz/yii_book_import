@@ -1,7 +1,8 @@
 <?php
 
-namespace common\models;
+namespace backend\models;
 
+use common\models\User;
 use Yii;
 use yii\base\Model;
 
@@ -10,9 +11,9 @@ use yii\base\Model;
  */
 class LoginForm extends Model
 {
-    public $username;
-    public $password;
-    public $rememberMe = true;
+    public string $username = '';
+    public string $password = '';
+    public bool $rememberMe = true;
 
     private $_user;
 
@@ -20,7 +21,7 @@ class LoginForm extends Model
     /**
      * {@inheritdoc}
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             [['username', 'password'], 'required'],
@@ -50,7 +51,7 @@ class LoginForm extends Model
         if (!$this->hasErrors()) {
             $user = $this->getUser();
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, 'Incorrect username or password.');
+                $this->addError($attribute, 'Неверный логин или пароль.');
             }
         }
     }
@@ -60,24 +61,24 @@ class LoginForm extends Model
      *
      * @return bool whether the user is logged in successfully
      */
-    public function login()
+    public function login(): bool
     {
         if ($this->validate()) {
             return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
         }
-        
+
         return false;
     }
 
     /**
      * Finds user by [[username]]
      *
-     * @return User|null
+     * @return \common\models\User|null
      */
-    protected function getUser()
+    protected function getUser(): ?User
     {
         if ($this->_user === null) {
-            $this->_user = User::findByUsername($this->username);
+            $this->_user = User::findAdminByUsername($this->username);
         }
 
         return $this->_user;

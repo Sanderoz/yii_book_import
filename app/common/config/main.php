@@ -6,6 +6,7 @@ return [
         '@npm' => '@vendor/npm-asset',
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
+    'bootstrap' => ['log', 'queue'],
     'components' => [
         'cache' => [
             'class' => \yii\caching\FileCache::class,
@@ -25,7 +26,7 @@ return [
             'port' => $_ENV['RABBITMQ_PORT'],
             'user' => $_ENV['RABBITMQ_USER'],
             'password' => $_ENV['RABBITMQ_PASSWORD'],
-            'queueName' => 'my_queue',
+            'queueName' => 'import_queue',
             'as log' => 'yii\queue\LogBehavior',
         ],
     ],
