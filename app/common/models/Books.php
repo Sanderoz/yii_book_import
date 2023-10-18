@@ -134,4 +134,8 @@ class Books extends BaseModel
         return $this->hasOne(Files::class, ['id' => 'image']);
     }
 
+    public static function find()
+    {
+        return new BooksQuery(get_called_class());
+    }
 }

@@ -24,6 +24,7 @@ return [
         'request' => [
             'baseUrl' => '/admin',
             'csrfParam' => '_csrf-backend',
+            'cookieValidationKey' => 'RRZF-GFn82-JSjdNKXH4TuvT6WcH4OkT',
         ],
         'user' => [
             'identityClass' => 'common\models\User',

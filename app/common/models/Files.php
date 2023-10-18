@@ -91,9 +91,10 @@ class Files extends \yii\db\ActiveRecord
 
             $this->original_name = $file->name;
             $this->hash = $hash_file;
-            $this->path = Files::getFilePath() . '/' . $hash_file . '.' . $file->extension;
+            $this->path = Files::getFilePath($hash_file . '.' . $file->extension);
+            $this->full_path = Files::getFullFilePath($hash_file . '.' . $file->extension);
 
-            if ($file->saveAs($this->path) and $this->validate())
+            if ($file->saveAs($this->full_path) and $this->validate())
                 $this->save();
             else
                 throw new FileException('Не удалось сохранить файл');
@@ -117,8 +118,8 @@ class Files extends \yii\db\ActiveRecord
             $imageContent = file_get_contents($url);
             $filename = $hash . '.' . pathinfo($url, PATHINFO_EXTENSION);
 
-            FileHelper::createDirectory(Files::getFilePath() . '/books/');
-            $filePath = Files::getFilePath() . '/books/' . $filename;
+            FileHelper::createDirectory(Files::getFullFilePath('/books/'));
+            $filePath = Files::getFullFilePath('/books/' . $filename);
             if (!file_put_contents($filePath, $imageContent))
                 return false;
 
@@ -126,7 +127,7 @@ class Files extends \yii\db\ActiveRecord
             $fileModel = new Files();
             $fileModel->original_name = pathinfo(basename($url), PATHINFO_FILENAME);
             $fileModel->hash = $hash;
-            $fileModel->path = '/uploads/books/' . $filename;
+            $fileModel->path = Files::getFilePath('/books/' . $filename);
             $fileModel->full_path = $filePath;
             $fileModel->s3path = $url;
             if ($fileModel->validate() and $fileModel->save())
@@ -149,7 +150,12 @@ class Files extends \yii\db\ActiveRecord
 
     public static function getFilePath(string $name = ''): false|string
     {
-        return \Yii::getAlias('@commonUploads') . $name;
+        return '/uploads/' . $name;
+    }
+
+    public static function getFullFilePath(string $name = ''): false|string
+    {
+        return \Yii::getAlias('@commonUploads') . '/' . $name;
     }
 
 }

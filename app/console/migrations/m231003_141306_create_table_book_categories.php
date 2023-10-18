@@ -21,6 +21,11 @@ class m231003_141306_create_table_book_categories extends Migration
             'name' => $this->string()->notNull(),
         ]);
         $this->addForeignKey('fk_book_categories_image', $this->table, 'image', '{{%files}}', 'id');
+
+        $this->insert($this->table, [
+            'name' => 'New',
+            'parent' => 0
+        ]);
     }
 
     /**

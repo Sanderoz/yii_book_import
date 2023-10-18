@@ -31,14 +31,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
-                'attribute' => 'image',
-                'format' => 'html',
-                'value' => function (Books $model) {
-
-                    return empty($model->imageModel) ? '' : '<img src="' . $model->imageModel->path . '" alt="' . $model->imageModel->original_name . '">';
-                },
-            ],
-            [
                 'attribute' => 'isbn',
                 'format' => 'html',
                 'value' => function (Books $model) {

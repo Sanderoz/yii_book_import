@@ -105,3 +105,11 @@ a.desc:after {
 a{
     color: red;
 }
+
+.category_card a{
+    text-decoration: none;
+}
+
+.category_card a:hover{
+    color: #0a53be!important;
+}

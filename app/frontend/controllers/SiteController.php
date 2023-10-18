@@ -2,6 +2,10 @@
 
 namespace frontend\controllers;
 
+use common\models\BookBelongsCategories;
+use common\models\BookCategories;
+use common\models\Books;
+use common\models\BooksSearch;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -14,7 +18,7 @@ use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
-use frontend\models\ContactForm;
+use frontend\models\FeedbackForm;
 
 /**
  * Site controller
@@ -33,8 +37,8 @@ class SiteController extends Controller
                 'rules' => [
                     [
                         'actions' => ['signup'],
-                        'allow' => true,
-                        'roles' => ['?'],
+                        'allow' => false,
+                        'roles' => ['*'],
                     ],
                     [
                         'actions' => ['logout'],
@@ -73,9 +77,16 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($parent = 0)
     {
-        return $this->render('index');
+        $searchModel = new BooksSearch();
+        $dataProvider = $searchModel->search($this->request->queryParams);
+
+        return $this->render('index', [
+            'categories' => BookCategories::findAll(['parent' => $parent]),
+            'books' => $dataProvider,
+            'searchModel' => $searchModel
+        ]);
     }
 
     /**
@@ -118,32 +129,27 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionContact()
+    public function actionFeedback()
     {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
-            } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending your message.');
-            }
+        $model = new FeedbackForm();
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->validate()) {
+                $check_email = $model->sendEmail();
+                $check_save = $model->save(false);
 
-            return $this->refresh();
+                if ($check_save || $check_email) {
+                    Yii::$app->session->setFlash('success', 'Сообщение успешно отправлено');
+                    $model = new FeedbackForm();
+                } else {
+                    Yii::$app->session->setFlash('error', 'Извините, произошла ошибка, попробуйте позже');
+
+                }
+            }
         }
 
-        return $this->render('contact', [
+        return $this->render('feedback', [
             'model' => $model,
         ]);
-    }
-
-    /**
-     * Displays about page.
-     *
-     * @return mixed
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
     }
 
     /**
@@ -217,8 +223,8 @@ class SiteController extends Controller
      * Verify email address
      *
      * @param string $token
-     * @throws BadRequestHttpException
      * @return yii\web\Response
+     * @throws BadRequestHttpException
      */
     public function actionVerifyEmail($token)
     {

@@ -2,9 +2,10 @@
 
 namespace common\models;
 
+use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveRecord;
+
 /**
- * This is the model class for table "{{%messages}}".
- *
  * @property int $id
  * @property int|null $user
  * @property int $created_at
@@ -15,7 +16,7 @@ namespace common\models;
  *
  * @property User $userModel
  */
-class Messages extends \yii\db\ActiveRecord
+class Messages extends BaseModel
 {
     /**
      * {@inheritdoc}
@@ -25,17 +26,33 @@ class Messages extends \yii\db\ActiveRecord
         return '{{%messages}}';
     }
 
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => TimestampBehavior::class,
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => ['created_at'],
+                ],
+                'value' => time(),
+            ],
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['user', 'created_at'], 'integer'],
-            [['created_at', 'phone', 'email', 'name', 'message'], 'required'],
+            [['user'], 'integer'],
+            [['name', 'message'], 'required'],
             [['message'], 'string'],
             [['phone'], 'string', 'max' => 20],
-            [['email', 'name'], 'string', 'max' => 255],
+            [['name'], 'string', 'max' => 255],
+            ['email', 'email'],
+            ['phone', 'match', 'pattern' => '/^\+\d \(\d{3}\) \d{3}-\d{2}-\d{2}$/'],
+            ['user', 'default', 'value' => \Yii::$app->getUser()->id ?? null],
             [['user'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['user' => 'id']],
         ];
     }
@@ -57,8 +74,6 @@ class Messages extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[User0]].
-     *
      * @return \yii\db\ActiveQuery
      */
     public function getUserModel()

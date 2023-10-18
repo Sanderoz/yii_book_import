@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     echo Html::img($model->img_path, ['alt' => $model->file->original_name ?? '', 'width' => 200, 'class' => 'mb-3 mt-3']);
     echo $form->field($model, 'name')->textInput(['required']);
-    echo $form->field($model, 'parent')->dropDownList(BookCategories::getParents($model->id));
+    echo $form->field($model, 'parent')->dropDownList($model->availableParents());
 
     echo $form->field($file, 'imageFile')->fileInput(['class' => 'mb-3 mt-3']);
 

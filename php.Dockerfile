@@ -12,7 +12,6 @@ RUN apt-get update && apt-get install -y \
     libpng-dev  \
     libmagickwand-dev
 
-
 RUN docker-php-ext-install pdo pdo_mysql sockets
 RUN pecl install amqp imagick && docker-php-ext-enable amqp imagick
 
@@ -23,13 +22,12 @@ COPY ./settings/supervisor/supervisor.conf /etc/supervisor/conf.d/supervisor.con
 COPY ./settings/php-fpm/php.ini /usr/local/etc/php/php.ini
 COPY ./app/ /var/www/html/
 
-#RUN chmod -R 755 /var/www/html
+WORKDIR /var/www/html
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN composer install --no-interaction
+
 USER root
 RUN chmod -R 777 /var/www/html/common/uploads
-
-WORKDIR /var/www/html
-#RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-#RUN composer install --no-interaction
 
 #RUN chown -R www-data:www-data ./frontend/web ./backend/web
 

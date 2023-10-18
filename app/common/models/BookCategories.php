@@ -44,6 +44,7 @@ class BookCategories extends BaseModel
             [['name'], 'string', 'max' => 255],
             ['parent', 'default', 'value' => 0],
             [['image'], 'exist', 'skipOnError' => true, 'targetClass' => Files::class, 'targetAttribute' => ['image' => 'id']],
+            ['parent', 'validateParent']
         ];
     }
 
@@ -58,6 +59,37 @@ class BookCategories extends BaseModel
             'parent' => 'Родительская категория',
             'name' => 'Наименование',
         ];
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function validateParent($attribute, $params): void
+    {
+        if (!$this->isNewRecord) {
+            $check = \Yii::$app->db->createCommand('
+                      WITH RECURSIVE category_hierarchy AS (
+                      SELECT id, name, parent
+                      FROM book_categories
+                      WHERE id = :current
+                    
+                      UNION ALL
+                    
+                      SELECT c.id, c.name, c.parent
+                      FROM book_categories c
+                      INNER JOIN category_hierarchy ch ON c.parent = ch.id
+                    )
+                    SELECT id
+                    FROM book_categories
+                    WHERE :parent_id IN (SELECT id FROM category_hierarchy)
+                ')
+                ->bindValue(':current', $this->id)
+                ->bindValue(':parent_id', $this->parent)
+                ->queryOne();
+
+            if ($check)
+                $this->addError($attribute, 'Родителем не может быть дочерний элемент');
+        }
     }
 
     public function afterFind()
@@ -91,9 +123,11 @@ class BookCategories extends BaseModel
      * @return array
      * @throws Exception
      */
-    public static function getParents($current = false): array
+    public function availableParents(): array
     {
-        if ($current) {
+        if ($this->isNewRecord) {
+            $parents = ArrayHelper::map(BookCategories::find()->select(['id', 'name'])->orderBy('name DESC')->all(), 'id', 'name');
+        } else {
             $categories = \Yii::$app->db->createCommand('
                       WITH RECURSIVE category_hierarchy AS (
                       SELECT id, name, parent
@@ -109,13 +143,12 @@ class BookCategories extends BaseModel
                     SELECT id, name
                     FROM book_categories
                     WHERE id NOT IN (SELECT id FROM category_hierarchy)
+                    ORDER BY name DESC
                 ')
-                ->bindValue(':current', $current)
+                ->bindValue(':current', $this->id)
                 ->queryAll();
 
             $parents = ArrayHelper::map($categories, 'id', 'name');
-        } else {
-            $parents = ArrayHelper::map(BookCategories::find()->select(['id', 'name'])->all(), 'id', 'name');
         }
 
         $parents[0] = 'Главная категория';

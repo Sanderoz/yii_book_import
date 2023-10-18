@@ -19,7 +19,7 @@ class m231003_145138_create_table_messages extends Migration
             'user' => $this->integer()->null(),
             'created_at' => $this->integer()->notNull(),
 
-            'phone' => $this->string(20)->notNull(),
+            'phone' => $this->string(20),
             'email' => $this->string()->notNull(),
             'name' => $this->string()->notNull(),
             'message' => $this->text()->notNull(),

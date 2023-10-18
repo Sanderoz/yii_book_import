@@ -118,6 +118,9 @@ class BookImport
      */
     private function saveCategoryRelations(array $categories): void
     {
+        if (empty($categories))
+            $categories[] = 'New';
+
         foreach ($categories as $category) {
             if (empty($category))
                 continue;

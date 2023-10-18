@@ -1,31 +1,39 @@
 <?php
 
-/** @var yii\web\View $this */
+use yii\widgets\ListView;
 
-$this->title = 'My Yii Application';
+/** @var yii\web\View $this
+ * @var \common\models\BookCategories $categories
+ * @var \yii\data\ActiveDataProvider $books
+ * @var \common\models\BooksSearch $searchModel
+ * */
+
+$this->title = Yii::$app->name;
 ?>
 <div class="site-index">
-    <div class="p-5 mb-4 bg-transparent rounded-3">
-        <div class="container-fluid py-5 text-center">
-            <h1 class="display-4">Congratulations!</h1>
-            <p class="fs-5 fw-light">You have successfully created your Yii-powered application.</p>
-            <p><a class="btn btn-lg btn-success" href="https://www.yiiframework.com">Get started with Yii</a></p>
-        </div>
-    </div>
+    <div class="row">
+        <?php
+        echo $this->render('_search', ['searchModel' => $searchModel]);
+        if (empty($categories) and empty($books)) {
+            echo '<h2>Увы, ничего не найдено</h2>';
+        } else {
+            if (!empty($categories)) {
+                echo '<h2 class="mb-4 mt-4">Категории книг</h2>';
+                foreach ($categories as $category) {
+                    echo $this->render('_categoryCard', ['category' => $category]);
+                }
+            }
+            if (!empty($books)) {
+                echo '<h2 class="mb-4">Книги</h2>';
+                echo ListView::widget([
+                    'dataProvider' => $books,
+                    'itemView' => '_bookCard',
+                    'itemOptions' => ['class' => 'col-2 category_card'],
+                    'options' => ['class' => 'row'],
+                ]);
+            }
+        }
 
-    <div class="body-content">
-
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown button
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-        </div>
-
+        ?>
     </div>
 </div>

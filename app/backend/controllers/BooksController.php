@@ -9,6 +9,7 @@ use common\models\BookBelongsCategories;
 use common\models\BookCategories;
 use common\models\Books;
 use common\models\BooksQuery;
+use common\models\BooksSearch;
 use common\models\Files;
 use yii\db\Exception;
 use yii\web\Controller;
@@ -46,7 +47,7 @@ class BooksController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new BooksQuery();
+        $searchModel = new BooksSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [

@@ -14,6 +14,7 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
+            'cookieValidationKey' => 'psM6UAwi0SINYwu7L2HuBei7w6E5lBhH',
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -41,7 +42,7 @@ return [
             'showScriptName' => false,
             'rules' => [
                 '' => 'site/index',
-                'login' => 'site/login',
+                '<action:(feedback|login)>' => 'site/<action>',
             ],
         ],
     ],
