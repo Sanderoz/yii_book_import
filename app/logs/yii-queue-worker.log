@@ -1,0 +1,686 @@
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+PHP Warning:  require(/var/www/html/vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/yii on line 10
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/yii:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/yii on line 10
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPConnectionClosedException' with message 'Broken pipe'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:266
+
+Caused by: Exception 'ErrorException' with message 'fwrite(): Send of 12 bytes failed with errno=32 Broken pipe'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:251
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php(252): PhpAmqpLib\Wire\IO\AbstractIO->throwOnError()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(410): PhpAmqpLib\Wire\IO\StreamIO->write('\x01\x00\x00\x00\x00\x00\x04\x00\n\x003\xCE')
+#2 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(540): PhpAmqpLib\Connection\AbstractConnection->write('\x01\x00\x00\x00\x00\x00\x04\x00\n\x003\xCE')
+#3 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(245): PhpAmqpLib\Connection\AbstractConnection->send_channel_method_frame(0, Array, '')
+#4 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(795): PhpAmqpLib\Channel\AbstractChannel->send_method_frame(Array)
+#5 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(785): PhpAmqpLib\Connection\AbstractConnection->x_close_ok()
+#6 [internal function]: PhpAmqpLib\Connection\AbstractConnection->connection_close(Object(PhpAmqpLib\Wire\AMQPBufferReader))
+#7 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(214): call_user_func(Array, Object(PhpAmqpLib\Wire\AMQPBufferReader))
+#8 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(363): PhpAmqpLib\Channel\AbstractChannel->dispatch('10,50', '\x01@KCONNECTION_F...', NULL)
+#9 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(700): PhpAmqpLib\Channel\AbstractChannel->wait()
+#10 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(232): PhpAmqpLib\Connection\AbstractConnection->wait_channel(1, 0)
+#11 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(341): PhpAmqpLib\Channel\AbstractChannel->next_frame(0)
+#12 /var/www/html/vendor/enqueue/amqp-lib/AmqpSubscriptionConsumer.php(61): PhpAmqpLib\Channel\AbstractChannel->wait(NULL, false, 0)
+#13 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(342): Enqueue\AmqpLib\AmqpSubscriptionConsumer->consume()
+#14 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#15 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#16 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#17 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#18 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#19 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#20 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#21 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#22 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#23 /var/www/html/yii(23): yii\base\Application->run()
+#24 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (php_network_getaddresses: getaddrinfo for rabbitmq failed: Temporary failure in name resolution)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPConnectionClosedException' with message 'Broken pipe'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:266
+
+Caused by: Exception 'ErrorException' with message 'fwrite(): Send of 12 bytes failed with errno=32 Broken pipe'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:251
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php(252): PhpAmqpLib\Wire\IO\AbstractIO->throwOnError()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(410): PhpAmqpLib\Wire\IO\StreamIO->write('\x01\x00\x00\x00\x00\x00\x04\x00\n\x003\xCE')
+#2 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(540): PhpAmqpLib\Connection\AbstractConnection->write('\x01\x00\x00\x00\x00\x00\x04\x00\n\x003\xCE')
+#3 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(245): PhpAmqpLib\Connection\AbstractConnection->send_channel_method_frame(0, Array, '')
+#4 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(795): PhpAmqpLib\Channel\AbstractChannel->send_method_frame(Array)
+#5 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(785): PhpAmqpLib\Connection\AbstractConnection->x_close_ok()
+#6 [internal function]: PhpAmqpLib\Connection\AbstractConnection->connection_close(Object(PhpAmqpLib\Wire\AMQPBufferReader))
+#7 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(214): call_user_func(Array, Object(PhpAmqpLib\Wire\AMQPBufferReader))
+#8 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(363): PhpAmqpLib\Channel\AbstractChannel->dispatch('10,50', '\x01@KCONNECTION_F...', NULL)
+#9 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(700): PhpAmqpLib\Channel\AbstractChannel->wait()
+#10 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(232): PhpAmqpLib\Connection\AbstractConnection->wait_channel(1, 0)
+#11 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(341): PhpAmqpLib\Channel\AbstractChannel->next_frame(0)
+#12 /var/www/html/vendor/enqueue/amqp-lib/AmqpSubscriptionConsumer.php(61): PhpAmqpLib\Channel\AbstractChannel->wait(NULL, false, 0)
+#13 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(342): Enqueue\AmqpLib\AmqpSubscriptionConsumer->consume()
+#14 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#15 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#16 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#17 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#18 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#19 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#20 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#21 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#22 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#23 /var/www/html/yii(23): yii\base\Application->run()
+#24 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPConnectionClosedException' with message 'Broken pipe'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:266
+
+Caused by: Exception 'ErrorException' with message 'fwrite(): Send of 12 bytes failed with errno=32 Broken pipe'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:251
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php(252): PhpAmqpLib\Wire\IO\AbstractIO->throwOnError()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(410): PhpAmqpLib\Wire\IO\StreamIO->write('\x01\x00\x00\x00\x00\x00\x04\x00\n\x003\xCE')
+#2 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(540): PhpAmqpLib\Connection\AbstractConnection->write('\x01\x00\x00\x00\x00\x00\x04\x00\n\x003\xCE')
+#3 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(245): PhpAmqpLib\Connection\AbstractConnection->send_channel_method_frame(0, Array, '')
+#4 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(795): PhpAmqpLib\Channel\AbstractChannel->send_method_frame(Array)
+#5 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(785): PhpAmqpLib\Connection\AbstractConnection->x_close_ok()
+#6 [internal function]: PhpAmqpLib\Connection\AbstractConnection->connection_close(Object(PhpAmqpLib\Wire\AMQPBufferReader))
+#7 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(214): call_user_func(Array, Object(PhpAmqpLib\Wire\AMQPBufferReader))
+#8 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(363): PhpAmqpLib\Channel\AbstractChannel->dispatch('10,50', '\x01@KCONNECTION_F...', NULL)
+#9 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(700): PhpAmqpLib\Channel\AbstractChannel->wait()
+#10 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(232): PhpAmqpLib\Connection\AbstractConnection->wait_channel(1, 0)
+#11 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(341): PhpAmqpLib\Channel\AbstractChannel->next_frame(0)
+#12 /var/www/html/vendor/enqueue/amqp-lib/AmqpSubscriptionConsumer.php(61): PhpAmqpLib\Channel\AbstractChannel->wait(NULL, false, 0)
+#13 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(342): Enqueue\AmqpLib\AmqpSubscriptionConsumer->consume()
+#14 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#15 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#16 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#17 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#18 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#19 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#20 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#21 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#22 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#23 /var/www/html/yii(23): yii\base\Application->run()
+#24 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}
+Exception 'PhpAmqpLib\Exception\AMQPIOException' with message 'stream_socket_client(): Unable to connect to tcp://rabbitmq:5672 (Connection refused)'
+
+in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108
+
+Stack trace:
+#0 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\Wire\IO\StreamIO->connect()
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(719): PhpAmqpLib\Connection\AbstractConnection->connect()
+#2 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(286): PhpAmqpLib\Connection\AbstractConnection->channel()
+#3 /var/www/html/vendor/enqueue/amqp-lib/AmqpContext.php(165): Enqueue\AmqpLib\AmqpContext->getLibChannel()
+#4 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(476): Enqueue\AmqpLib\AmqpContext->declareQueue(Object(Interop\Amqp\Impl\AmqpQueue))
+#5 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Queue.php(312): yii\queue\amqp_interop\Queue->setupBroker()
+#6 /var/www/html/vendor/yiisoft/yii2-queue/src/drivers/amqp_interop/Command.php(40): yii\queue\amqp_interop\Queue->listen()
+#7 [internal function]: yii\queue\amqp_interop\Command->actionListen()
+#8 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('listen', Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('listen', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('queue/listen', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('queue/listen', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 /var/www/html/yii(23): yii\base\Application->run()
+#16 {main}

@@ -5,9 +5,11 @@ namespace console\controllers;
 use common\components\exceptions\SettingsException;
 use common\components\import\BookImport;
 use common\components\import\FileImport;
+use common\models\Files;
 use common\models\Settings;
 use yii\console\Controller;
 use yii\helpers\Console;
+use yii\helpers\FileHelper;
 
 class ImportController extends Controller
 {
@@ -16,6 +18,7 @@ class ImportController extends Controller
      */
     public function actionIndex()
     {
+        FileHelper::createDirectory(Files::getFullFilePath('/temp/'));
         $filename = \Yii::getAlias('@commonUploads') . '/temp/book-' . time() . '.json';
         $file = new FileImport(
             Settings::findOne(['url_parse'])['value'] ?? new SettingsException('Url не задан'),

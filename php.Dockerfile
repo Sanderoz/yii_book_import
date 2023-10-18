@@ -1,6 +1,10 @@
 FROM php:8.2-fpm
 
+ENV COMPOSER_ALLOW_SUPERUSER=1
+
 RUN apt-get update && apt-get install -y \
+    libzip-dev \
+    unzip \
     libmcrypt-dev \
     default-mysql-client \
     supervisor \
@@ -22,11 +26,15 @@ COPY ./settings/supervisor/supervisor.conf /etc/supervisor/conf.d/supervisor.con
 COPY ./settings/php-fpm/php.ini /usr/local/etc/php/php.ini
 COPY ./app/ /var/www/html/
 
+#USER 0
 WORKDIR /var/www/html
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN composer install --no-interaction
+RUN composer install
 
-USER root
+#RUN chmod -R 777 /var/www/html
+#RUN chmod -R 777 /var/www/html/backend && \
+#    chmod -R 777 /var/www/html/frontend
+
 RUN chmod -R 777 /var/www/html/common/uploads
 
 #RUN chown -R www-data:www-data ./frontend/web ./backend/web
