@@ -3,24 +3,29 @@ return [
     'name' => 'Book library',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm' => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset'
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'bootstrap' => ['log', 'queue'],
     'components' => [
+        'helper' => [
+            'class' => \common\components\helpers\AppHelper::class,
+        ],
+
+
         'cache' => [
-            'class' => \yii\caching\FileCache::class,
+            'class' => \yii\redis\Cache::class,
         ],
         'db' => [
             'class' => \yii\db\Connection::class,
 //            'dsn' => 'mysql:host=127.0.0.1;dbname=yii_db;',
-            'dsn' => 'mysql:host='.$_ENV['MYSQL_HOST'].';dbname='.$_ENV['MYSQL_DATABASE'].';port='.$_ENV['MYSQL_PORT'],
+            'dsn' => 'mysql:host=' . $_ENV['MYSQL_HOST'] . ';dbname=' . $_ENV['MYSQL_DATABASE'] . ';port=' . $_ENV['MYSQL_PORT'],
             'username' => $_ENV['MYSQL_USER'],
             'password' => $_ENV['MYSQL_PASSWORD'],
             'charset' => 'utf8',
         ],
         'queue' => [
-            'class' => 'yii\queue\amqp_interop\Queue',
+            'class' => \yii\queue\amqp_interop\Queue::class,
             'driver' => 'enqueue/amqp-lib',
             'host' => $_ENV['RABBITMQ_HOST'],
             'port' => $_ENV['RABBITMQ_PORT'],
@@ -28,6 +33,12 @@ return [
             'password' => $_ENV['RABBITMQ_PASSWORD'],
             'queueName' => 'import_queue',
             'as log' => 'yii\queue\LogBehavior',
+        ],
+        'redis' => [
+            'class' => \yii\redis\Connection::class,
+            'hostname' => $_ENV['REDIS_HOST'],
+            'port' => $_ENV['REDIS_PORT'],
+            'database' => $_ENV['REDIS_DATABASE'],
         ],
         'mailer' => [
             'class' => \yii\symfonymailer\Mailer::class,

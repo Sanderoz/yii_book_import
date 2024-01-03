@@ -33,17 +33,28 @@ services:
     ports:
       - 3306:3306
     environment:
-      - MYSQL_ROOT_PASSWORD=verysecret
-      - MYSQL_DATABASE=yii2advanced
-      - MYSQL_USER=yii2advanced
-      - MYSQL_PASSWORD=secret
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
 
   rabbitmq:
     image: rabbitmq:3.9.29-management
     container_name: rabbitmq
+    hostname: rabbitmq
+    restart: always
+    volumes:
+      - ./rabbitmq/state:/var/lib/rabbitmq
     environment:
-      - RABBITMQ_DEFAULT_USER=mquser
-      - RABBITMQ_DEFAULT_PASS=mqpassword
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_PASS}
+      - RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS=-rabbit log_levels [{connection,error},{default,error}] disk_free_limit ${RABBITMQ_MEMORY_LIMIT}
     ports:
       - "5672:5672"
       - "15672:15672"
+
+  redis:
+    image: redis:7.2.3
+    container_name: redis
+    ports:
+      - 6379:6379

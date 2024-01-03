@@ -1,5 +1,8 @@
 <?php
 
+use common\components\helpers\AppHelper;
+use yii\queue\amqp_interop\Queue;
+
 /**
  * This class only exists here for IDE (PHPStorm/Netbeans/...) autocompletion.
  * This file is never included anywhere.
@@ -24,6 +27,9 @@ class Yii {
  * 
  */
 class __Application {
+    public Queue $queue;
+    public AppHelper $helper;
+
 }
 
 /**
