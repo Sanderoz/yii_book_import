@@ -33,9 +33,7 @@ class m240102_091530_create_table_orders extends Migration
      */
     public function safeDown()
     {
-        echo "m240102_091530_create_table_orders cannot be reverted.\n";
-
-        return false;
+        $this->delete($this->table);
     }
 
 }

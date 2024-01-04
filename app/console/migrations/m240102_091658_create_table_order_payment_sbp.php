@@ -38,6 +38,7 @@ class m240102_091658_create_table_order_payment_sbp extends Migration
      */
     public function safeDown()
     {
+        $this->dropIndex('index_order_payment_sbp_payment_id', $this->table);
         $this->delete($this->table);
     }
 

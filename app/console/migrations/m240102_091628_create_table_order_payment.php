@@ -15,7 +15,7 @@ class m240102_091628_create_table_order_payment extends Migration
      */
     public function safeUp()
     {
-        $this->createTable($this->table,[
+        $this->createTable($this->table, [
             'id' => $this->primaryKey(),
             'order_id' => $this->integer()->notNull(),
             'amount' => $this->integer()->notNull()->comment('Сумма платежа'),
@@ -24,6 +24,8 @@ class m240102_091628_create_table_order_payment extends Migration
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
         ]);
+
+        $this->addForeignKey('fk_order_payment_order_id', $this->table, 'order_id', '{{%orders}}', 'id');
     }
 
     /**
@@ -31,9 +33,7 @@ class m240102_091628_create_table_order_payment extends Migration
      */
     public function safeDown()
     {
-        echo "m240102_091628_create_table_order_payment cannot be reverted.\n";
-
-        return false;
+        $this->delete($this->table);
     }
 
 }

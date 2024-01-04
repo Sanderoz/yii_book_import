@@ -32,6 +32,7 @@ class m240102_091609_create_table_order_items extends Migration
      */
     public function safeDown()
     {
+        $this->dropIndex('index_order_items_book_isbn_order_id', $this->table);
         $this->delete($this->table);
     }
 

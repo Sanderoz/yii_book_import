@@ -31,6 +31,7 @@ class m240102_091602_create_table_cart_items extends Migration
      */
     public function safeDown()
     {
+        $this->dropIndex('index_cart_items_book_isbn_user_id', $this->table);
         $this->delete($this->table);
     }
 
