@@ -20,6 +20,7 @@ use yii\helpers\ArrayHelper;
  * @property string $title Заголовок
  * @property string $shortDescription
  * @property string|null $longDescription
+ * @property int $price
  *
  * @property Authors[] $authors
  * @property BookCategories[] $categories
@@ -65,7 +66,7 @@ class Books extends BaseModel
     {
         return [
             [['pageCount', 'status', 'isbn', 'title'], 'required'],
-            [['pageCount', 'created_at', 'updated_at', 'image'], 'integer'],
+            [['pageCount', 'created_at', 'updated_at', 'image', 'price'], 'integer'],
             [['publishedDate'], 'safe'],
             [['shortDescription', 'longDescription', 'status'], 'string'],
             [['isbn', 'title'], 'string', 'max' => 255],

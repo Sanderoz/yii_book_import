@@ -31,4 +31,5 @@ class StatusDTO extends AbstractStatusDTO
     {
         return 'alfa';
     }
+
 }

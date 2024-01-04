@@ -2,6 +2,8 @@
 
 namespace common\components\enums;
 
+use ReflectionClass;
+
 enum OrderStatus: int
 {
     case DELETED = 0;
@@ -9,6 +11,7 @@ enum OrderStatus: int
     case PROCESSED = 2;
     case CANCELED = 3;
     case PAID = 4;
+    case CONFIRMED = 5;
 
     public function getName(self $status): string
     {
@@ -19,6 +22,12 @@ enum OrderStatus: int
             self::CANCELED => 'Отменен',
             self::PAID => 'Оплачен',
         };
+    }
+
+    public static function getValues(): array
+    {
+        $reflection = new ReflectionClass(self::class);
+        return array_values($reflection->getConstants());
     }
 
 }

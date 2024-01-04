@@ -8,7 +8,10 @@ use common\components\dto\payment\banks\responses\alfa\sbp\StatusDTO;
 use common\components\dto\payment\types\sbp\AbstractGetDTO;
 use common\components\dto\payment\types\sbp\AbstractRegisterDTO;
 use common\components\dto\payment\types\sbp\AbstractStatusDTO;
+use common\components\enums\PaymentStatus;
+use common\components\exceptions\RequestException;
 use common\components\exceptions\SettingsException;
+use common\components\interfaces\payment\PaymentInterface;
 use common\components\interfaces\payment\SbpPaymentInterface;
 use common\components\dto\payment\banks\requests\sbp\RegisterDTO as RequestRegisterDTO;
 use common\components\dto\payment\banks\requests\sbp\StatusDTO as RequestStatusDTO;
@@ -18,44 +21,72 @@ use yii\helpers\Url;
 use yii\httpclient\Client;
 use yii\httpclient\Exception;
 
-class AlfaRequests implements SbpPaymentInterface
+class AlfaRequests implements SbpPaymentInterface, PaymentInterface
 {
-    private string $userName;
-    private string $password;
+    /** QR-код cформирован;  */
+    const SBP_STATUS_STARTED = 'STARTED';
+
+    /** Заказ принят к оплате; */
+    const SBP_STATUS_CONFIRMED = 'CONFIRMED';
+
+    /** оплата отклонена;  */
+    const SBP_STATUS_REJECTED = 'REJECTED';
+
+    /** оплате по QR-коду отклонена мерчантом; */
+    const SBP_STATUS_REJECTED_BY_USER = 'REJECTED_BY_USER';
+
+    /** заказ оплачен. */
+    const SBP_STATUS_ACCEPTED = 'ACCEPTED';
+
+    // Типы оплат
+    const PAYMENT_TYPE_SBP = 'SBP';
+    const PAYMENT_TYPE_CARD = 'CARD';
+
+    // Статусы ответов
+    const STATUS_SUCCESS = 200;
+
+    // Доступы
+    private string $_userName;
+    private string $_password;
+
+    // Поля ответа
+    private string $_paymentType = self::PAYMENT_TYPE_SBP;
+    private string $_status;
+
 
     /**
      * @throws SettingsException
      */
     public function __construct(
-        private readonly Client $client = new Client()
+        private readonly Client $_client = new Client()
     )
     {
         if (!Yii::$app->helper->isDev()) {
             if (empty($_ENV['ALFA_PASSWORD']) or empty($_ENV['ALFA_USERNAME']))
                 throw new SettingsException('Отсутсвуют настройки доступа');
 
-            $this->userName = $_ENV['ALFA_USERNAME'];
-            $this->password = $_ENV['ALFA_PASSWORD'];
+            $this->_userName = $_ENV['ALFA_USERNAME'];
+            $this->_password = $_ENV['ALFA_PASSWORD'];
             return;
         }
 
         if (empty($_ENV['ALFA_PASSWORD_DEV']) or empty($_ENV['ALFA_USERNAME_DEV']))
             throw new SettingsException('Отсутсвуют настройки доступа');
 
-        $this->userName = $_ENV['ALFA_USERNAME_DEV'];
-        $this->password = $_ENV['ALFA_PASSWORD_DEV'];
+        $this->_userName = $_ENV['ALFA_USERNAME_DEV'];
+        $this->_password = $_ENV['ALFA_PASSWORD_DEV'];
     }
 
     protected function getClient(): Client
     {
-        return $this->client;
+        return $this->_client;
     }
 
     protected function getAuthData(): array
     {
         return [
-            'password' => $this->password,
-            'userName' => $this->userName
+            'password' => $this->_password,
+            'userName' => $this->_userName
         ];
     }
 
@@ -67,20 +98,24 @@ class AlfaRequests implements SbpPaymentInterface
      * @throws Exception
      * @throws \Exception
      */
-    public function getRegister(RequestRegisterDTO $data): AbstractRegisterDTO
+    public function getSbpRegister(RequestRegisterDTO $data): AbstractRegisterDTO
     {
         $response = $this->getClient()->post(
             Url::toRoute($this->getRegisterLink(), array_merge($this->getAuthData(), $data->getAlfaData()))
         )->send();
 
-        return new RegisterDTO((array)$response);
+        if ($response->getStatusCode() != self::STATUS_SUCCESS)
+            throw new RequestException();
+
+        $this->setData(); // тк статус не приходит, то просто обнуляем поля
+        return new RegisterDTO($response->getData());
     }
 
     /**
      * @throws Exception
      * @throws \Exception
      */
-    public function getStatus(RequestStatusDTO $data): AbstractStatusDTO
+    public function getSbpStatus(RequestStatusDTO $data): AbstractStatusDTO
     {
         $response = $this->getClient()->post(
             Url::toRoute($this->getRegisterLink(), array_merge($this->getAuthData(), $data->getAlfaData())),
@@ -90,7 +125,13 @@ class AlfaRequests implements SbpPaymentInterface
             ]
         )->send();
 
-        return new StatusDTO((array)$response);
+        if ($response->getStatusCode() != self::STATUS_SUCCESS)
+            throw new RequestException();
+
+        $result = new StatusDTO($response->getData());
+        $this->setData($result->getQrStatus());
+
+        return $result;
     }
 
 
@@ -100,7 +141,7 @@ class AlfaRequests implements SbpPaymentInterface
      * @throws Exception
      * @throws \Exception
      */
-    public function getGet(RequestGetDTO $data): AbstractGetDTO
+    public function getSbpGet(RequestGetDTO $data): AbstractGetDTO
     {
         $response = $this->getClient()->post(
             Url::toRoute($this->getGetLink(), array_merge($this->getAuthData(), $data->getAlfaData())),
@@ -110,9 +151,51 @@ class AlfaRequests implements SbpPaymentInterface
             ]
         )->send();
 
-        return new GetDTO((array)$response);
+        if ($response->getStatusCode() != self::STATUS_SUCCESS)
+            throw new RequestException();
+
+        $result = new GetDTO($response->getData());
+        $this->setData($result->getQrStatus());
+
+        return $result;
     }
 
+    /************** Data methods ************/
+    /**
+     * Установка результата запросов
+     * @param string $status
+     * @param string $type
+     * @return void
+     */
+    private function setData(
+        string $status = '',
+        string $type = self::PAYMENT_TYPE_SBP
+    ): void
+    {
+        $this->_status = $status;
+        $this->_paymentType = $type;
+    }
+
+    public function getPaymentStatus(): PaymentStatus
+    {
+        return match ($this->_paymentType) {
+            self::PAYMENT_TYPE_SBP => function () {
+                return match ($this->_status) {
+                    self::SBP_STATUS_ACCEPTED => PaymentStatus::PAID,
+                    self::SBP_STATUS_CONFIRMED => PaymentStatus::PROCESSED,
+                    self::SBP_STATUS_REJECTED_BY_USER, self::SBP_STATUS_REJECTED => PaymentStatus::CANCELED,
+                    default => PaymentStatus::NEW
+                };
+            },
+            default => PaymentStatus::NEW
+        };
+    }
+
+    /************** Links ************/
+
+    /**
+     * @return string
+     */
     private function getRegisterLink(): string
     {
         if (!Yii::$app->helper->isDev())
@@ -136,4 +219,6 @@ class AlfaRequests implements SbpPaymentInterface
 
         return 'https://alfa.rbsuat.com/payment/rest/sbp/c2b/qr/dynamic/status.do';
     }
+    /************** END Links ************/
+
 }

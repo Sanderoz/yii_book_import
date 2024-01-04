@@ -5,8 +5,8 @@ $params = array_merge(
     require __DIR__ . '/params.php',
 );
 
-$container = new \yii\di\Container();
-$container->set('yii\web\UploadedFile', 'yii\web\UploadedFile');
+//$container = new \yii\di\Container();
+//$container->set('yii\web\UploadedFile', 'yii\web\UploadedFile');
 
 return [
     'id' => 'app-backend',

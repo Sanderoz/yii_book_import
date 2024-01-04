@@ -16,19 +16,20 @@ interface SbpPaymentInterface
      * @param RegisterDTO $data
      * @return AbstractRegisterDTO
      */
-    public function getRegister(RegisterDTO $data): AbstractRegisterDTO;
+    public function getSbpRegister(RegisterDTO $data): AbstractRegisterDTO;
 
     /**
      * Проверка статуса qr кода
      * @param StatusDTO $data
      * @return AbstractStatusDTO
      */
-    public function getStatus(StatusDTO $data): AbstractStatusDTO;
+    public function getSbpStatus(StatusDTO $data): AbstractStatusDTO;
 
     /**
      * Получение qr кода
      * @param GetDTO $data
      * @return AbstractGetDTO
      */
-    public function getGet(GetDTO $data): AbstractGetDTO;
+    public function getSbpGet(GetDTO $data): AbstractGetDTO;
+
 }
