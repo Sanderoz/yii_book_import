@@ -17,6 +17,11 @@ use yii\httpclient\Exception;
 
 class PaymentService
 {
+    public function __construct(OrderPaymentInterface $order)
+    {
+        $this->setOrder($order);
+    }
+
     private OrderPaymentInterface $_order;
 
     /**
@@ -29,7 +34,7 @@ class PaymentService
             case(PaymentType::CARD):
                 break;
             case(PaymentType::SBP):
-                $payment = $this->getOrder()->getPaymentModel($paymentType);
+                $payment = $this->getOrder()->getPaymentModel(PaymentType::SBP);
                 if (!empty($payment->getSbpPaymentModel()))
                     return;
 
@@ -45,7 +50,7 @@ class PaymentService
                     throw new OrderException($response->getErrorMessage());
 
                 $payment->setSbpPayment(
-                    $service->getPaymentStatus(),
+                    $service->getPaymentStatus($paymentType),
                     $response->getBank(),
                     '',
                     $response->getOrderId(),
@@ -67,9 +72,10 @@ class PaymentService
      * @throws \yii\db\Exception
      * @throws \Exception
      */
-    public function getSbpData(OrderPaymentInterface $order): array
+    public function getSbpData(): array
     {
-        $this->setOrder($order);
+        $transaction = Yii::$app->db->beginTransaction();
+
         $this->createPayment(PaymentType::SBP);
         $payment = $this->getOrder()->getPaymentModel();
         $result = [
@@ -83,7 +89,7 @@ class PaymentService
         $service = $this->getSbpBankPayment();
         $qrData = $service->getSbpGet(new GetDTO($payment->getSbpPaymentModel()->order_id));
         $payment->setSbpPayment(
-            $service->getPaymentStatus(),
+            $service->getPaymentStatus(PaymentType::SBP, $qrData->getQrStatus()),
             $qrData->getBank(),
             $qrData->getQrId(),
             $payment->getSbpPaymentModel()->order_id,
@@ -93,6 +99,8 @@ class PaymentService
             $qrData->getErrorMessage(),
             $qrData->getErrorCode()
         );
+
+        $transaction->commit();
 
         $result['error_message'] = $qrData->getErrorMessage();
         return array_merge(['payload' => $qrData->getPayload()], $result);

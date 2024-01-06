@@ -9,6 +9,7 @@ use common\components\dto\payment\types\sbp\AbstractGetDTO;
 use common\components\dto\payment\types\sbp\AbstractRegisterDTO;
 use common\components\dto\payment\types\sbp\AbstractStatusDTO;
 use common\components\enums\PaymentStatus;
+use common\components\enums\PaymentType;
 use common\components\exceptions\RequestException;
 use common\components\exceptions\SettingsException;
 use common\components\interfaces\payment\PaymentInterface;
@@ -48,10 +49,6 @@ class AlfaRequests implements SbpPaymentInterface, PaymentInterface
     // Доступы
     private string $_userName;
     private string $_password;
-
-    // Поля ответа
-    private string $_paymentType = self::PAYMENT_TYPE_SBP;
-    private string $_status;
 
 
     /**
@@ -101,13 +98,12 @@ class AlfaRequests implements SbpPaymentInterface, PaymentInterface
     public function getSbpRegister(RequestRegisterDTO $data): AbstractRegisterDTO
     {
         $response = $this->getClient()->post(
-            Url::toRoute($this->getRegisterLink(), array_merge($this->getAuthData(), $data->getAlfaData()))
+            ltrim(Url::to(array_merge([$this->getRegisterLink()], $this->getAuthData(), $data->getAlfaData()), true), '/')
         )->send();
 
         if ($response->getStatusCode() != self::STATUS_SUCCESS)
             throw new RequestException();
 
-        $this->setData(); // тк статус не приходит, то просто обнуляем поля
         return new RegisterDTO($response->getData());
     }
 
@@ -118,7 +114,7 @@ class AlfaRequests implements SbpPaymentInterface, PaymentInterface
     public function getSbpStatus(RequestStatusDTO $data): AbstractStatusDTO
     {
         $response = $this->getClient()->post(
-            Url::toRoute($this->getRegisterLink(), array_merge($this->getAuthData(), $data->getAlfaData())),
+            ltrim(Url::to(array_merge([$this->getStatusLink()], $this->getAuthData(), $data->getAlfaData()), true), '/'),
             [],
             [
                 'Сontent-type' => 'application/x-www-form-urlencoded'
@@ -128,10 +124,7 @@ class AlfaRequests implements SbpPaymentInterface, PaymentInterface
         if ($response->getStatusCode() != self::STATUS_SUCCESS)
             throw new RequestException();
 
-        $result = new StatusDTO($response->getData());
-        $this->setData($result->getQrStatus());
-
-        return $result;
+        return new StatusDTO($response->getData());
     }
 
 
@@ -144,7 +137,7 @@ class AlfaRequests implements SbpPaymentInterface, PaymentInterface
     public function getSbpGet(RequestGetDTO $data): AbstractGetDTO
     {
         $response = $this->getClient()->post(
-            Url::toRoute($this->getGetLink(), array_merge($this->getAuthData(), $data->getAlfaData())),
+            ltrim(Url::to(array_merge([$this->getGetLink()], $this->getAuthData(), $data->getAlfaData()), true), '/'),
             [],
             [
                 'Сontent-type' => 'application/x-www-form-urlencoded'
@@ -154,33 +147,14 @@ class AlfaRequests implements SbpPaymentInterface, PaymentInterface
         if ($response->getStatusCode() != self::STATUS_SUCCESS)
             throw new RequestException();
 
-        $result = new GetDTO($response->getData());
-        $this->setData($result->getQrStatus());
-
-        return $result;
+        return new GetDTO($response->getData());
     }
 
-    /************** Data methods ************/
-    /**
-     * Установка результата запросов
-     * @param string $status
-     * @param string $type
-     * @return void
-     */
-    private function setData(
-        string $status = '',
-        string $type = self::PAYMENT_TYPE_SBP
-    ): void
+    public function getPaymentStatus(PaymentType $type, ?string $status): PaymentStatus
     {
-        $this->_status = $status;
-        $this->_paymentType = $type;
-    }
-
-    public function getPaymentStatus(): PaymentStatus
-    {
-        return match ($this->_paymentType) {
-            self::PAYMENT_TYPE_SBP => function () {
-                return match ($this->_status) {
+        return match ($type) {
+            PaymentType::SBP => function () use ($status) {
+                return match ($status) {
                     self::SBP_STATUS_ACCEPTED => PaymentStatus::PAID,
                     self::SBP_STATUS_CONFIRMED => PaymentStatus::PROCESSED,
                     self::SBP_STATUS_REJECTED_BY_USER, self::SBP_STATUS_REJECTED => PaymentStatus::CANCELED,

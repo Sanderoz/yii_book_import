@@ -2,8 +2,11 @@
 
 namespace common\components\enums;
 
+use common\components\traits\EnumValues;
+
 enum BookStatus: string
 {
+    use EnumValues;
     case PUBLISH = 'publish';
     case MEAP = 'meap';
     case DEFAULT = 'empty';

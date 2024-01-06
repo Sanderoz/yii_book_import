@@ -21,7 +21,7 @@ class CartItems extends BaseModel
 {
     public static function tableName(): string
     {
-        return 'cart_items';
+        return '{{%cart_items}}';
     }
 
     public function rules(): array
@@ -43,9 +43,27 @@ class CartItems extends BaseModel
      * @param User $user
      * @return int
      */
-    public static function clearCart(User $user): int
+    public static function clearCart(?int $userId = null): int
     {
-        return self::deleteAll(['user_id' => $user]);
+        if ($userId === null)
+            $userId = Yii::$app->user->id;
+
+        return self::deleteAll(['user_id' => $userId]);
+    }
+
+    /**
+     * @param int|null $userId
+     * @return false|int
+     */
+    private static function getUserId(?int $userId = null): false|int
+    {
+        if ($userId !== null)
+            return $userId;
+
+        if (Yii::$app->user->isGuest)
+            return false;
+
+        return Yii::$app->user->id;
     }
 
     /**
@@ -56,11 +74,14 @@ class CartItems extends BaseModel
      * @return int
      * @throws Exception
      */
-    public static function addItemInCart(Books $book, User $user, int $count = 1): int
+    public static function addItemInCart(Books $book, ?int $userId = null, int $count = 1): ?int
     {
+        if (!($userId = self::getUserId($userId)))
+            return null;
+
         Yii::$app->db->createCommand()->upsert(self::tableName(),
             [
-                'user_id' => $user->id,
+                'user_id' => $userId,
                 'book_isbn' => $book->isbn,
                 'count' => 1
             ], [
@@ -69,7 +90,7 @@ class CartItems extends BaseModel
             ->bindParam('count', $count)
             ->execute();
 
-        return self::findOne(['user_id' => $user->id, 'book_isbn' => $book->isbn])->count;
+        return self::findOne(['user_id' => $userId, 'book_isbn' => $book->isbn])->count;
     }
 
     /**
@@ -82,11 +103,14 @@ class CartItems extends BaseModel
      * @throws StaleObjectException
      * @throws Throwable
      */
-    public static function minusItemInCart(Books $book, User $user, int $count = 1, bool $all = false): ?int
+    public static function minusItemFromCart(Books $book, ?int $userId = null, int $count = 1, bool $all = false): ?int
     {
+        if (!($userId = self::getUserId($userId)))
+            return null;
+
         if (empty($model = self::findOne([
             'book_isbn' => $book->isbn,
-            'user_id' => $user->id
+            'user_id' => $userId
         ])))
             return null;
 
@@ -99,6 +123,53 @@ class CartItems extends BaseModel
 
         $model->save();
         return $model->count;
+    }
+
+    /**
+     * Получение стоимости корзины
+     * @param int|null $userId
+     * @return int
+     */
+    public static function getCartCost(?int $userId = null): int
+    {
+        if (!($userId = self::getUserId($userId)))
+            return 0;
+
+        $cartCost = 0;
+        foreach (self::getUserItems($userId) as $cartItems)
+            $cartCost += $cartItems->count * $cartItems->book->price;
+
+        return $cartCost;
+    }
+
+    /**
+     * Получить товары корзины
+     * @param int|null $userId
+     * @return CartItems[]
+     */
+    public static function getUserItems(?int $userId = null): array
+    {
+        if (!($userId = self::getUserId($userId)))
+            return [];
+
+        return self::find()->where(['user_id' => $userId])->all();
+    }
+
+    /**
+     * Получение isbn всех книг, находящихся в корзине текущего пользователя
+     * @param int|null $userId
+     * @return array
+     */
+    public static function getUserItemsAsArray(?int $userId = null): array
+    {
+        if (!($userId = self::getUserId($userId)))
+            return [];
+
+        return self::find()
+            ->select('book_isbn')
+            ->where(['user_id' => $userId])
+            ->asArray()
+            ->column();
     }
 
     public function getBook(): ActiveQuery

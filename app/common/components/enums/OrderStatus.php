@@ -2,10 +2,12 @@
 
 namespace common\components\enums;
 
-use ReflectionClass;
+use common\components\traits\EnumValues;
+use ReflectionEnum;
 
 enum OrderStatus: int
 {
+    use EnumValues;
     case DELETED = 0;
     case NEW = 1;
     case PROCESSED = 2;
@@ -22,12 +24,6 @@ enum OrderStatus: int
             self::CANCELED => 'Отменен',
             self::PAID => 'Оплачен',
         };
-    }
-
-    public static function getValues(): array
-    {
-        $reflection = new ReflectionClass(self::class);
-        return array_values($reflection->getConstants());
     }
 
 }

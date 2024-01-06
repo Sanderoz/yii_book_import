@@ -8,8 +8,8 @@ class RegisterDTO extends AbstractRegisterDTO
 {
     protected string $orderId = '';
     protected string $formUrl = '';
-    protected string $ErrorMessage = '';
-    protected string $ErrorCode = '';
+    protected string $errorMessage = '';
+    protected string $errorCode = '';
 
 
     public function getOrderId(): string
@@ -24,12 +24,12 @@ class RegisterDTO extends AbstractRegisterDTO
 
     public function getErrorCode(): string
     {
-        return $this->ErrorCode;
+        return $this->errorCode;
     }
 
     public function getErrorMessage(): string
     {
-        return $this->ErrorMessage;
+        return $this->errorMessage;
     }
 
     public function getBank(): string

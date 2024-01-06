@@ -8,6 +8,7 @@ use common\components\enums\PaymentType;
 use common\components\exceptions\OrderException;
 use common\components\interfaces\payment\OrderPaymentDataInterface;
 use Yii;
+use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 
@@ -22,33 +23,38 @@ use yii\db\ActiveRecord;
  *
  * @property OrderPaymentSbp $orderPaymentSbp
  * @property Orders $order
+ * @property PaymentType $enumType
  */
 class OrderPayment extends BaseModel implements OrderPaymentDataInterface
 {
     public static function tableName(): string
     {
-        return 'order_payment';
+        return '{{%order_payment}}';
     }
 
     public function rules(): array
     {
         return [
-            [['order_id', 'amount', 'type', 'created_at', 'updated_at'], 'required'],
-            [['order_id', 'amount', 'type', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['order_id', 'amount', 'type'], 'required'],
+            [['order_id', 'type', 'status', 'created_at', 'updated_at'], 'integer'],
+            ['amount', 'integer', 'min' => 100],
             ['type', 'in', 'range' => PaymentType::getValues()],
             ['status', 'in', 'range' => PaymentStatus::getValues()],
-            ['order_id', 'exist', 'skipOnError' => true, 'targetClass' => Orders::class, 'targetAttribute' => ['id' => 'order_id']],
+            ['order_id', 'exist', 'skipOnError' => true, 'targetClass' => Orders::class, 'targetAttribute' => ['order_id' => 'id']],
         ];
     }
 
-    public function behaviors(): array
+    public function behaviors()
     {
         return [
-            'attributes' => [
-                ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
-                ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
+            [
+                'class' => TimestampBehavior::class,
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
+                    ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
+                ],
+                'value' => time(),
             ],
-            'value' => time(),
         ];
     }
 
@@ -60,7 +66,7 @@ class OrderPayment extends BaseModel implements OrderPaymentDataInterface
         if (isset($changedAttributes['status']))
             $this->order->updateStatus($this->getOrderStatus());
 
-        $this->afterSave($insert, $changedAttributes);
+        parent::afterSave($insert, $changedAttributes);
     }
 
     public function attributeLabels(): array
@@ -69,7 +75,7 @@ class OrderPayment extends BaseModel implements OrderPaymentDataInterface
             'id' => 'ID',
             'order_id' => 'Order ID',
             'amount' => 'Amount',
-            'type' => 'Type',
+            'type' => 'Способ оплаты',
             'status' => 'Status',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
@@ -93,6 +99,11 @@ class OrderPayment extends BaseModel implements OrderPaymentDataInterface
         throw new OrderException('Неизвестный статус заказа');
     }
 
+    public function getEnumType(): ?PaymentType
+    {
+        return PaymentType::getTypeByValue($this->type);
+    }
+
     public function getOrder(): ActiveQuery
     {
         return $this->hasOne(Orders::class, ['id' => 'order_id']);
@@ -107,7 +118,6 @@ class OrderPayment extends BaseModel implements OrderPaymentDataInterface
     {
         return $this->orderPaymentSbp;
     }
-
 
     /**
      * @param PaymentStatus $status

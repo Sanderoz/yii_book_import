@@ -10,12 +10,6 @@ use common\components\interfaces\RequestDTOInterface;
 interface OrderPaymentInterface
 {
     /**
-     * Тип оплаты (по карте/сбп)
-     * @return PaymentType
-     */
-    public function getPaymentType(): PaymentType;
-
-    /**
      * Создание/получение модели оплаты
      * @param PaymentType|null $paymentType
      * @return OrderPaymentDataInterface|null

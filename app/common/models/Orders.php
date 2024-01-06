@@ -9,8 +9,10 @@ use common\components\exceptions\OrderException;
 use common\components\interfaces\payment\OrderPaymentDataInterface;
 use common\components\interfaces\payment\OrderPaymentInterface;
 use Yii;
+use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
+use yii\db\Exception;
 
 /**
  * @property int $id
@@ -26,35 +28,42 @@ use yii\db\ActiveRecord;
  * @property Books[] $cartItemsProducts
  * @property User $user
  * @property OrderPayment $payment
+ * @property OrderDeliveries $delivery
  */
 class Orders extends BaseModel implements OrderPaymentInterface
 {
+    // Просто рандомный префикс для номера заказа
+    const NUMBER_PREFIX = 'N';
+
     public static function tableName(): string
     {
-        return 'orders';
+        return '{{%orders}}';
     }
 
     public function rules(): array
     {
         return [
-            [['user_id', 'status', 'total_price', 'created_at', 'updated_at'], 'required'],
-            [['user_id', 'status', 'total_price', 'created_at', 'updated_at'], 'integer'],
+            [['user_id', 'status', 'total_price'], 'required'],
+            [['user_id', 'status', 'created_at', 'updated_at'], 'integer'],
             [['number'], 'string', 'max' => 255],
-            ['total_price', 'min' => 100],
+            ['total_price', 'integer', 'min' => 100],
             ['status', 'in', 'range' => OrderStatus::getValues()],
             [['number'], 'unique'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
 
-    public function behaviors(): array
+    public function behaviors()
     {
         return [
-            'attributes' => [
-                ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
-                ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
+            [
+                'class' => TimestampBehavior::class,
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
+                    ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
+                ],
+                'value' => time(),
             ],
-            'value' => time(),
         ];
     }
 
@@ -71,9 +80,54 @@ class Orders extends BaseModel implements OrderPaymentInterface
         ];
     }
 
-    public function updateStatus(OrderStatus $status):void
+    public function afterSave($insert, $changedAttributes)
     {
+        if (empty($this->number)) {
+            $this->number = self::NUMBER_PREFIX . $this->id;
+            $this->save();
+        }
 
+        parent::afterSave($insert, $changedAttributes);
+    }
+
+    public function updateStatus(OrderStatus $status): void
+    {
+        // TODO: дописать
+    }
+
+    /**
+     * @throws OrderException
+     * @throws Exception
+     */
+    public static function crateOrder(int $user_id): self
+    {
+        $transaction = Yii::$app->db->beginTransaction();
+
+        $model = new self([
+            'user_id' => $user_id,
+            'status' => OrderStatus::NEW->value,
+            'total_price' => CartItems::getCartCost($user_id)
+        ]);
+
+        if (!$model->save())
+            throw new OrderException('Ошибка при создании заказа');
+
+        foreach (CartItems::getUserItems() as $cartItem) {
+            $item = new OrderItems([
+                'book_isbn' => $cartItem->book_isbn,
+                'order_id' => $model->id,
+                'price' => $cartItem->book->price,
+                'count' => $cartItem->count
+            ]);
+
+            if ($item->save())
+                continue;
+            else
+                throw new OrderException('Ошибка при создании заказа');
+        }
+        $transaction->commit();
+
+        return $model;
     }
 
     /**
@@ -153,11 +207,6 @@ class Orders extends BaseModel implements OrderPaymentInterface
         return $this->hasOne(OrderPayment::class, ['order_id' => 'id']);
     }
 
-    public function getPaymentType(): PaymentType
-    {
-        return PaymentType::getTypeById($this->payment->type);
-    }
-
     public function getOrderNumber(): string
     {
         return $this->number;
@@ -171,5 +220,10 @@ class Orders extends BaseModel implements OrderPaymentInterface
     public function getTotalPrice(): int
     {
         return $this->total_price;
+    }
+
+    public function getDelivery(): ActiveQuery
+    {
+        return $this->hasOne(OrderDeliveries::tableName(), ['order_id' => 'id']);
     }
 }

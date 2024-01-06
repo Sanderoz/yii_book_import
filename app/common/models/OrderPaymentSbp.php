@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 
@@ -26,7 +27,7 @@ class OrderPaymentSbp extends BaseModel
 {
     public static function tableName(): string
     {
-        return 'order_payment_sbp';
+        return '{{%order_payment_sbp}}';
     }
 
     public function rules(): array
@@ -39,14 +40,17 @@ class OrderPaymentSbp extends BaseModel
         ];
     }
 
-    public function behaviors(): array
+    public function behaviors()
     {
         return [
-            'attributes' => [
-                ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
-                ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
+            [
+                'class' => TimestampBehavior::class,
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
+                    ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
+                ],
+                'value' => time(),
             ],
-            'value' => time(),
         ];
     }
 

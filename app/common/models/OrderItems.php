@@ -17,7 +17,7 @@ class OrderItems extends BaseModel
 {
     public static function tableName(): string
     {
-        return 'order_items';
+        return '{{%order_items}}';
     }
 
     public function rules(): array

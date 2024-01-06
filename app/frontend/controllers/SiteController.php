@@ -2,23 +2,24 @@
 
 namespace frontend\controllers;
 
-use common\models\BookBelongsCategories;
 use common\models\BookCategories;
 use common\models\Books;
 use common\models\BooksSearch;
+use common\models\CartItems;
+use common\models\LoginForm;
+use common\models\User;
+use frontend\models\FeedbackForm;
+use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResendVerificationEmailForm;
+use frontend\models\ResetPasswordForm;
+use frontend\models\SignupForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
-use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
-use common\models\LoginForm;
-use frontend\models\PasswordResetRequestForm;
-use frontend\models\ResetPasswordForm;
-use frontend\models\SignupForm;
-use frontend\models\FeedbackForm;
 
 /**
  * Site controller
@@ -28,7 +29,7 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
+    public function behaviors(): array
     {
         return [
             'access' => [
@@ -59,7 +60,7 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
-    public function actions()
+    public function actions(): array
     {
         return [
             'error' => [
@@ -72,12 +73,8 @@ class SiteController extends Controller
         ];
     }
 
-    /**
-     * Displays homepage.
-     *
-     * @return mixed
-     */
-    public function actionIndex($parent = 0)
+
+    public function actionIndex(int $parent = 0): string
     {
         $searchModel = new BooksSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
@@ -96,14 +93,12 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        if (!Yii::$app->user->isGuest) {
+        if (!Yii::$app->user->isGuest)
             return $this->goHome();
-        }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+        if ($model->load(Yii::$app->request->post()) && $model->login())
             return $this->goBack();
-        }
 
         $model->password = '';
 

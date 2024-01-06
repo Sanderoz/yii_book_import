@@ -2,6 +2,7 @@
 
 namespace common\models;
 
+use common\components\enums\BookStatus;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
@@ -68,6 +69,7 @@ class Books extends BaseModel
             [['pageCount', 'status', 'isbn', 'title'], 'required'],
             [['pageCount', 'created_at', 'updated_at', 'image', 'price'], 'integer'],
             [['publishedDate'], 'safe'],
+            ['status', 'in', 'range' => BookStatus::getValues()],
             [['shortDescription', 'longDescription', 'status'], 'string'],
             [['isbn', 'title'], 'string', 'max' => 255],
             [['isbn'], 'unique'],

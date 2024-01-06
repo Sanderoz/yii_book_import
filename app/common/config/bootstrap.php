@@ -11,5 +11,4 @@ Yii::setAlias('@commonUploads', dirname(__DIR__) . '/uploads');
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
 $dotenv->load();
 
-$container = new \yii\di\Container();
-$container->set(\common\components\interfaces\payment\SbpPaymentInterface::class, \common\requests\payments\AlfaRequests::class);
+Yii::$container->set(\common\components\interfaces\payment\SbpPaymentInterface::class, \common\requests\payments\AlfaRequests::class);
