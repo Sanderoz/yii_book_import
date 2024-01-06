@@ -21,18 +21,19 @@ class BookImport
     ];
 
     public function __construct(
-        public array  $books,
+        public array  &$books,
         private Books $model = new Books()
     )
     {
     }
 
     /**
+     * @param bool $updateImages Обновлять изображения или нет
      * @param callable $callback
      * @return array[successful, unsuccessful, unsuccessful_isbn]
-     * @throws \Exception
+     * @throws Exception
      */
-    public function import(callable $callback): array
+    public function import(bool $updateImages, callable $callback): array
     {
         foreach ($this->books as $index => $book) {
             $callback($index + 1);
@@ -42,8 +43,8 @@ class BookImport
             }
 
             $this->setValues($book);
-            if ($this->model->validate(['pageCount', 'title', 'shortDescription', 'longDescription']) and $this->saveModel()) {
-                if (isset($book['thumbnailUrl']))
+            if ($this->model->validate(['pageCount', 'title', 'shortDescription', 'longDescription', 'price']) and $this->saveModel()) {
+                if (($updateImages or empty($this->model->image)) and isset($book['thumbnailUrl']))
                     $this->addImportFileInQueue($book['thumbnailUrl']);
 
                 $this->addSuccess();
@@ -68,6 +69,7 @@ class BookImport
     {
         $this->model->setAttributes($fields);
         $this->model->status = BookStatus::getStatus($fields['status']);
+        $this->model->price = rand(100, 500) * 100;
         $this->model->created_at = time();
         $this->model->updated_at = time();
         $this->model->publishedDate = empty($fields['publishedDate']) ? null : self::getPublishedDate(array_values($fields['publishedDate'])[0] ?? null);
@@ -91,7 +93,7 @@ class BookImport
                     'title',
                     'shortDescription',
                     'longDescription',
-                    'image'
+                    'price'
                 ]),
                 $params
             )->execute() > 0;
@@ -154,7 +156,6 @@ class BookImport
 
     /**
      * @param string $url
-     * @param string $isbn
      * @return void
      */
     private function addImportFileInQueue(string $url): void

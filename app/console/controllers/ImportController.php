@@ -16,12 +16,13 @@ class ImportController extends Controller
     /**
      * @throws \Exception
      */
-    public function actionIndex()
+    public function actionIndex($updateImages = false): void
     {
+        $updateImages = $updateImages === 'true';
         FileHelper::createDirectory(Files::getFullFilePath('/temp/'));
         $filename = \Yii::getAlias('@commonUploads') . '/temp/book-' . time() . '.json';
         $file = new FileImport(
-            Settings::findOne(['url_parse'])['value'] ?? new SettingsException('Url не задан'),
+            Settings::findOne(['url_parse'])->value ?? \Yii::getAlias('@commonUploads') . '/import-books.json',//new SettingsException('Url не задан'),
             $filename
         );
 
@@ -32,7 +33,7 @@ class ImportController extends Controller
         Console::startProgress(0, $count_books);
 
         $import = new BookImport($books);
-        $result = $import->import(fn($current) => Console::updateProgress($current, $count_books, "Обработано $current из $count_books записей "));
+        $result = $import->import($updateImages, fn($current) => Console::updateProgress($current, $count_books, "Обработано $current из $count_books записей "));
 
         Console::endProgress();
         $file->unlinkFile();

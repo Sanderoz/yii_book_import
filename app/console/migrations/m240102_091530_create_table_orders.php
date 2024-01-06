@@ -19,7 +19,7 @@ class m240102_091530_create_table_orders extends Migration
             'number' => $this->string()->unique(),
             'user_id' => $this->integer()->notNull(),
             'status' => $this->smallInteger(2)->notNull()->comment('From enum OrderStatus'),
-            'total_price' => $this->integer()->notNull()->comment('Общая стоимость, выраженная в копейках'),
+            'total_price' => $this->integer()->notNull()->unsigned()->check('total_price >= 100')->comment('Общая стоимость, выраженная в копейках'),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
         ]);

@@ -17,8 +17,8 @@ class m240102_091609_create_table_order_items extends Migration
         $this->createTable($this->table, [
             'book_isbn' => $this->string(),
             'order_id' => $this->integer(),
-            'price' => $this->integer()->comment('Стоимость товара на момент оформления заказа'),
-            'count' => $this->integer()->comment('Количество заказанных книг')
+            'price' => $this->integer()->notNull()->unsigned()->check('price >= 100')->comment('Стоимость товара на момент оформления заказа'),
+            'count' => $this->integer()->notNull()->unsigned()->check('count >= 100')->comment('Количество заказанных книг')
         ]);
 
         $this->addForeignKey('fk_order_items_book_isbn', $this->table, 'book_isbn', '{{%books}}', 'isbn');
