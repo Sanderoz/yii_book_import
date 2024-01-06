@@ -30,7 +30,7 @@ class BookCategories extends BaseModel
      */
     public static function tableName()
     {
-        return 'book_categories';
+        return '{{%book_categories}}';
     }
 
     /**
