@@ -1,0 +1,8 @@
+[mysqld]
+gtid_mode=ON
+log_bin=mysql-bin
+log-slave-updates = 0
+enforce-gtid-consistency
+server_id=1
+replicate-do-db = yii2advanced
+sync_binlog = 0

@@ -1,0 +1,4 @@
+reset master;
+CHANGE MASTER TO MASTER_HOST='mysql-master',  MASTER_USER='slave1',  MASTER_PASSWORD='slavepassword1',  MASTER_PORT=3306,  MASTER_AUTO_POSITION=1;
+START SLAVE;
+

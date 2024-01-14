@@ -18,30 +18,70 @@ services:
   php:
     build:
       context: .
-      dockerfile: php.Dockerfile
+      dockerfile: settings/dockerfiles/php.Dockerfile
     container_name: php
     restart: always
+    env_file:
+      - ./.env
+      - ./app/.env
     volumes:
       - ./app:/var/www/html
     depends_on:
-      - mysql
+      - mysql-master
 
-  mysql:
-    image: mysql:8
-    container_name: mysql
+  import:
+    build:
+      context: .
+      dockerfile: settings/dockerfiles/import.Dockerfile
+    command: sh -c "php yii queue/listen"
+    container_name: import
+    restart: always
+    env_file:
+      - ./.env
+      - ./app/.env
+    volumes:
+      - ./app:/var/www/html
+    depends_on:
+      - mysql-master
+      - rabbitmq
+      - php
+
+  mysql-master:
+    image: mysql:8.0
+    container_name: ${MYSQL_MASTER_HOST}
     restart: always
     ports:
-      - 3306:3306
+      - ${MYSQL_MASTER_PORT}:3306
+    volumes:
+      - ./settings/mysql/init-master.sql:/docker-entrypoint-initdb.d/init-master.sql
+      - ./settings/mysql/master.cnf:/etc/mysql/conf.d/master.cnf
     environment:
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - MYSQL_DATABASE=${MYSQL_DATABASE}
-      - MYSQL_USER=${MYSQL_USER}
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_MASTER_ROOT_PASSWORD}
+      MYSQL_PASSWORD: ${MYSQL_MASTER_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_MASTER_DATABASE}
+      MYSQL_USER: ${MYSQL_MASTER_USER}
+
+  mysql-slave:
+    image: mysql:8.0
+    container_name: ${MYSQL_SLAVE_HOST}
+    restart: always
+    ports:
+      - ${MYSQL_SLAVE_PORT}:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_SLAVE_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_SLAVE_DATABASE}
+      MYSQL_USER: ${MYSQL_SLAVE_USER}
+      MYSQL_PASSWORD: ${MYSQL_SLAVE_PASSWORD}
+    depends_on:
+      - mysql-master
+    volumes:
+      - ./settings/mysql/init-slave.sql:/docker-entrypoint-initdb.d/init-slave.sql
+      - ./settings/mysql/slave.cnf:/etc/mysql/conf.d/slave.cnf
 
   rabbitmq:
     image: rabbitmq:3.9.29-management
-    container_name: rabbitmq
-    hostname: rabbitmq
+    container_name: ${RABBITMQ_HOST}
+    hostname: ${RABBITMQ_HOST}
     restart: always
     volumes:
       - ./rabbitmq/state:/var/lib/rabbitmq
@@ -50,11 +90,15 @@ services:
       - RABBITMQ_DEFAULT_PASS=${RABBITMQ_PASS}
       - RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS=-rabbit log_levels [{connection,error},{default,error}] disk_free_limit ${RABBITMQ_MEMORY_LIMIT}
     ports:
-      - "5672:5672"
-      - "15672:15672"
+      - ${RABBITMQ_PORT}:5672
+      - 15672:15672
 
   redis:
     image: redis:7.2.3
-    container_name: redis
+    container_name: ${REDIS_HOST}
     ports:
-      - 6379:6379
+      - ${REDIS_PORT}:6379
+
+volumes:
+  master_data:
+  slave_data:

@@ -19,10 +19,21 @@ return [
         'db' => [
             'class' => \yii\db\Connection::class,
 //            'dsn' => 'mysql:host=127.0.0.1;dbname=yii_db;',
-            'dsn' => 'mysql:host=' . $_ENV['MYSQL_HOST'] . ';dbname=' . $_ENV['MYSQL_DATABASE'] . ';port=' . $_ENV['MYSQL_PORT'],
-            'username' => $_ENV['MYSQL_USER'],
-            'password' => $_ENV['MYSQL_PASSWORD'],
+            'dsn' => 'mysql:host=' . $_ENV['MYSQL_MASTER_HOST'] . ';dbname=' . $_ENV['MYSQL_MASTER_DATABASE'] . ';port=' . $_ENV['MYSQL_MASTER_PORT'],
+            'username' => $_ENV['MYSQL_MASTER_USER'],
+            'password' => $_ENV['MYSQL_MASTER_PASSWORD'],
             'charset' => 'utf8',
+
+            'slaveConfig' => [
+                'username' => $_ENV['MYSQL_SLAVE_USER'],
+                'password' => $_ENV['MYSQL_SLAVE_PASSWORD'],
+                'attributes' => [
+                    PDO::ATTR_TIMEOUT => 10,
+                ],
+            ],
+            'slaves' => [
+                ['dsn' => 'mysql-slave:host=' . $_ENV['MYSQL_SLAVE_HOST'] . ';dbname=' . $_ENV['MYSQL_SLAVE_DATABASE'] . ';port=' . $_ENV['MYSQL_SLAVE_PORT']],
+            ],
         ],
         'queue' => [
             'class' => \yii\queue\amqp_interop\Queue::class,
@@ -30,7 +41,7 @@ return [
             'host' => $_ENV['RABBITMQ_HOST'],
             'port' => $_ENV['RABBITMQ_PORT'],
             'user' => $_ENV['RABBITMQ_USER'],
-            'password' => $_ENV['RABBITMQ_PASSWORD'],
+            'password' => $_ENV['RABBITMQ_PASS'],
             'queueName' => 'import_queue',
             'as log' => 'yii\queue\LogBehavior',
         ],
