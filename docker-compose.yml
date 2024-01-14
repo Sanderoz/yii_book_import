@@ -8,12 +8,14 @@ services:
     container_name: nginx
     ports:
       - 8080:80
+      - 8081:81
       - 443:443
     volumes:
       - ./settings/nginx/default.conf:/etc/nginx/nginx.conf
       - ./app:/var/www/html
     depends_on:
       - php
+      - api
 
   php:
     build:
@@ -27,6 +29,21 @@ services:
     volumes:
       - ./app:/var/www/html
     depends_on:
+      - mysql-master
+
+  api:
+    build:
+      context: .
+      dockerfile: settings/dockerfiles/api.Dockerfile
+    container_name: api
+    restart: always
+    env_file:
+      - ./.env
+      - ./app/.env
+    volumes:
+      - ./app:/var/www/html
+    depends_on:
+      - php
       - mysql-master
 
   import:

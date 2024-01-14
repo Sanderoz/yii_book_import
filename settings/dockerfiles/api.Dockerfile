@@ -27,6 +27,8 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
 #COPY ./settings/supervisor/supervisor.conf /etc/supervisor/conf.d/supervisor.conf
 COPY ./settings/php-fpm/php.ini /usr/local/etc/php/php.ini
 COPY ./app /var/www/html/
+RUN rm -rf /var/www/html/backend
+RUN rm -rf /var/www/html/frontend
 
 WORKDIR /var/www/html
 
@@ -37,9 +39,4 @@ RUN groupadd -g 1000 mygroup && \
     useradd -u 1000 -g mygroup -m myuser
 USER myuser
 
-#RUN chmod -R 777 /var/www/html/common/uploads
-#RUN chown -R www-data:www-data ./frontend/web ./backend/web
-
-#EXPOSE 9000
-
-#CMD ["supervisord", "-n"]
+EXPOSE 9000

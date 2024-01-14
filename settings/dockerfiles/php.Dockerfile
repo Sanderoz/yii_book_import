@@ -27,6 +27,7 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
 #COPY ./settings/supervisor/supervisor.conf /etc/supervisor/conf.d/supervisor.conf
 COPY ./settings/php-fpm/php.ini /usr/local/etc/php/php.ini
 COPY ./app /var/www/html/
+RUN rm -rf /var/www/html/api
 
 WORKDIR /var/www/html
 
