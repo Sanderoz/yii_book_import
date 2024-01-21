@@ -54,7 +54,6 @@ class OrderController extends Controller
         if (empty($cartItems = CartItems::getUserItems()))
             return $this->redirect(Url::to(['/cart']));
 
-
         return $this->render('index', [
             'cartItems' => $cartItems,
             'paymentTypes' => PaymentType::getKeyValue(),
@@ -118,7 +117,7 @@ class OrderController extends Controller
         } catch (OrderException|Exception $e) {
             Yii::$app->session->setFlash('error', $e->getMessage());
             return $this->redirect(Url::to(['/order']));
-        } catch (\yii\httpclient\Exception|\Exception $e) {
+        } catch (\Exception $e) {
             Yii::$app->session->setFlash('error', $errorMessage);
             return $this->redirect(Url::to(['/order']));
         }

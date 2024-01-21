@@ -40,7 +40,7 @@ class CartItems extends BaseModel
 
     /**
      * Очистка корзины
-     * @param User $user
+     * @param int|null $userId
      * @return int
      */
     public static function clearCart(?int $userId = null): int

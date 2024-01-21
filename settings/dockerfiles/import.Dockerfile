@@ -1,4 +1,4 @@
-FROM php:8.2-fpm
+FROM php:8.3-cli
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
@@ -25,12 +25,12 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd
 
 #COPY ./settings/supervisor/supervisor.conf /etc/supervisor/conf.d/supervisor.conf
-COPY ./settings/php-fpm/php.ini /usr/local/etc/php/php.ini
+COPY ./settings/php-cli/php.ini /usr/local/etc/php/php.ini
 COPY ./app /var/www/html/
 
 WORKDIR /var/www/html
 
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+#RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 #RUN composer install
 
 RUN groupadd -g 1000 mygroup && \

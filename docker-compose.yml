@@ -68,7 +68,7 @@ services:
     container_name: ${MYSQL_MASTER_HOST}
     restart: always
     ports:
-      - ${MYSQL_MASTER_PORT}:3306
+      - 3306:3306
     volumes:
       - ./settings/mysql/init-master.sql:/docker-entrypoint-initdb.d/init-master.sql
       - ./settings/mysql/master.cnf:/etc/mysql/conf.d/master.cnf
@@ -77,13 +77,14 @@ services:
       MYSQL_PASSWORD: ${MYSQL_MASTER_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_MASTER_DATABASE}
       MYSQL_USER: ${MYSQL_MASTER_USER}
+      MYSQL_MASTER_PORT: ${MYSQL_MASTER_PORT}
 
   mysql-slave:
     image: mysql:8.0
     container_name: ${MYSQL_SLAVE_HOST}
     restart: always
     ports:
-      - ${MYSQL_SLAVE_PORT}:3306
+      - 3307:3306
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_SLAVE_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_SLAVE_DATABASE}
@@ -107,14 +108,14 @@ services:
       - RABBITMQ_DEFAULT_PASS=${RABBITMQ_PASS}
       - RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS=-rabbit log_levels [{connection,error},{default,error}] disk_free_limit ${RABBITMQ_MEMORY_LIMIT}
     ports:
-      - ${RABBITMQ_PORT}:5672
+      - 5672:5672
       - 15672:15672
 
   redis:
     image: redis:7.2.3
     container_name: ${REDIS_HOST}
     ports:
-      - ${REDIS_PORT}:6379
+      - 6379:6379
 
 volumes:
   master_data:

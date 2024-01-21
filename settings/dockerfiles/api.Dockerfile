@@ -1,4 +1,4 @@
-FROM php:8.2-fpm
+FROM php:8.3-fpm
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
@@ -32,7 +32,7 @@ RUN rm -rf /var/www/html/frontend
 
 WORKDIR /var/www/html
 
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+#RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 #RUN composer install
 
 RUN groupadd -g 1000 mygroup && \

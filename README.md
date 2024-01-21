@@ -13,11 +13,10 @@
 
 <ol>Для поднятия проекта:
 <li>docker-compose up --build</li>
-<li>docker exec -it php composer install</li>
-<li>docker exec -it php php yii migrate</li>
-<li>docker exec -it php php yii import</li>
-<li>php yii queue/listen</li>
-<li>php yii  swagger/generate</li>
+<li>docker exec -it import php yii migrate</li>
+<li>docker exec -it import php yii import</li>
+<li>docker exec -it import php yii queue/listen</li>
+<li>docker exec -it import php yii swagger/generate</li>
 </ol>
 
 <ul>Логины пароли:
