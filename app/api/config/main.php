@@ -1,5 +1,7 @@
 <?php
 
+use yii\filters\auth\HttpBearerAuth;
+use yii\web\JsonParser;
 use yii\web\Response;
 
 $params = array_merge(
@@ -13,22 +15,21 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'api\controllers',
     'bootstrap' => ['log'],
-    'modules' => [
-
-    ],
     'components' => [
         'request' => [
             'parsers' => [
-                'application/json' => \yii\web\JsonParser::class,
+                'application/json' => JsonParser::class,
             ],
+            'enableCookieValidation' => false,
+            'enableCsrfValidation' => false,
         ],
         'response' => [
             'format' => Response::FORMAT_JSON,
         ],
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => \api\models\User::class,
             'enableAutoLogin' => false,
-            'enableSession' => false,
+            'enableSession' => false
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -39,17 +40,31 @@ return [
                 ],
             ],
         ],
-        'errorHandler' => [
-            'errorAction' => 'site/error',
-        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'books/<isbn:[\w\-]+>' => 'books/view',
+                'GET books/<isbn:[\w\-]+>' => 'books/view',
+                'POST cart/add/<isbn:[\w\-]+>' => 'cart/add',
+                'POST cart/minus/<isbn:[\w\-]+>' => 'cart/minus',
                 'uploads/<filename:[\w\-]+>' => 'common/uploads/<filename>',
             ],
         ]
+    ],
+    'as beforeRequest' => [
+        'class' => \yii\filters\ContentNegotiator::class,
+        'formats' => [
+            'application/json' => Response::FORMAT_JSON,
+        ],
+    ],
+    'as authenticator' => [
+        'class' => HttpBearerAuth::class,
+        'except' => [
+            'auth/get-token',
+            'auth/get-token-by-refresh',
+            'books/index',
+            'books/view',
+        ],
     ],
     'params' => $params,
 ];

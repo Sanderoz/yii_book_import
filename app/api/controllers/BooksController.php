@@ -4,17 +4,16 @@ namespace api\controllers;
 
 use api\models\Books;
 use Yii;
+use yii\base\InlineAction;
+use yii\caching\DbDependency;
 use yii\data\ActiveDataProvider;
+use yii\filters\HttpCache;
+use yii\filters\PageCache;
 use yii\rest\ActiveController;
 use yii\rest\IndexAction;
 use yii\web\NotFoundHttpException;
 use OpenApi\Attributes as OA;
 
-#[OA\Info(
-    version: "1.0.0",
-    description: 'Small bookstore',
-    title: 'Book shop'
-)]
 #[OA\Tag(
     name: 'books',
     description: 'Operations about books'
@@ -22,6 +21,25 @@ use OpenApi\Attributes as OA;
 class BooksController extends ActiveController
 {
     public $modelClass = Books::class;
+
+    public function behaviors(): array
+    {
+        return [
+            [
+                'class' => PageCache::class,
+                'only' => ['index'],
+                'duration' => 60
+            ],
+            [
+                'class' => PageCache::class,
+                'only' => ['view'],
+                'duration' => 60,
+                'variations' => [
+                    Yii::$app->request->get('isbn')
+                ],
+            ],
+        ];
+    }
 
     #[OA\Get(
         path: '/books',

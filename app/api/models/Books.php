@@ -3,29 +3,10 @@
 namespace api\models;
 
 use Yii;
-use yii\db\ActiveRecord;
 use OpenApi\Attributes as OA;
 
-/**
- * @property int $pageCount Количество страниц
- * @property int $status
- * @property int $created_at
- * @property int $updated_at
- * @property int $image
- * @property string $publishedDate Дата публикации
- * @property string $isbn
- * @property string $title Заголовок
- * @property string $shortDescription
- * @property string|null $longDescription
- * @property int $price
- */
-class Books extends ActiveRecord
+class Books extends \common\models\Books
 {
-    public static function tableName(): string
-    {
-        return '{{%books}}';
-    }
-
     public static function find(): BooksQuery
     {
         return new BooksQuery(get_called_class());

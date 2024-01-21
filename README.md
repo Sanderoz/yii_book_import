@@ -1,26 +1,33 @@
 <h1>Небольшой проект магазина книг</h1>
 <ol>Реализовано:
 <li>Ипорт книг из json файла с занесением в очередь загрузки изображений на RabbitMq</li>
+<li>Кеширование ответов на уровне как контроллеров, так и http (не всё)</li>
 <li>Панель администратора с редактированием категорий и самих книг (Осуществлен запрет на установку родителем категории дочернего элемента.)</li>
 <li>Реализован функционал оформления заказа (На данный момент заказ создается, очищается корзина, но в банк запросы не идут, т.к. доступов не имею, но методы и сервис для работы с банками готов)</li>
 <li>Реализована репликация бд на master-slave</li>
-
-<li>--------------------------------</li>
 <li>Реализовано мини-api для получения книг и работы с корзиной, авторизацией с помощью JWT токена.</li>
-<li>Описана документация api в swagger</li>
-<li>Созданы и проведены unit-тесты</li>
+<li>Сгенерирована документация api в swagger (не всё)</li>
 </ol> 
+
+<ol>Планы:
+<li>Создание unit-тестов</li>
+</ol>
 
 <ol>Для поднятия проекта:
 <li>docker-compose up --build</li>
 <li>docker exec -it import php yii migrate</li>
-<li>docker exec -it import php yii import</li>
-<li>docker exec -it import php yii queue/listen</li>
-<li>docker exec -it import php yii swagger/generate</li>
+<li>docker exec -it import php yii import<br>
 </ol>
-
-<ul>Логины пароли:
-<li>логин: admin</li> 
-<li>пароль: admin</li>
+<ul>
+Если rabbitMq не будет обрабатывать очередь самостоятельно - необходимо подтолкнуть:
+<li>docker exec -it import php yii queue/listen</li>
 </ul>
+<ul>Для генерации документации:
+<li>docker exec -it import php yii swagger/generate</li>
+</ul>
+
+<ol>Логины пароли:
+<li>логин: admin, пароль: admin</li> 
+<li>логин: user, пароль: user</li>
+</ol>
 
