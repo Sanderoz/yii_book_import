@@ -11,7 +11,7 @@ class SwaggerController extends Controller
     // https://zircote.github.io/
     public function actionGenerate(): string
     {
-        $openapi = Generator::scan([Yii::getAlias('@api/controllers')]);
+        $openapi = Generator::scan([Yii::getAlias('@api/')]);
         header('Content-Type: application/x-yaml');
 
         $filePath = './api.yaml';
