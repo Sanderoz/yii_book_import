@@ -2,19 +2,16 @@
 
 namespace api\controllers;
 
-use api\models\Books;
-use api\models\responses\BooksIndexResponse;
-use api\models\responses\BooksViewResponse;
+use api\models\Books\Books;
+use api\models\Books\BooksIndex;
+use api\models\Books\BooksView;
+use OpenApi\Attributes as OA;
 use Yii;
-use yii\base\InlineAction;
-use yii\caching\DbDependency;
 use yii\data\ActiveDataProvider;
-use yii\filters\HttpCache;
 use yii\filters\PageCache;
 use yii\rest\ActiveController;
 use yii\rest\IndexAction;
 use yii\web\NotFoundHttpException;
-use OpenApi\Attributes as OA;
 
 #[OA\Tag(
     name: 'books',
@@ -51,7 +48,7 @@ class BooksController extends ActiveController
             new OA\Response(
                 response: 200,
                 description: 'Получение книг',
-                content: new OA\JsonContent(ref: BooksIndexResponse::class)
+                content: new OA\JsonContent(ref: BooksIndex::class)
             )
         ]
     )]
@@ -77,7 +74,7 @@ class BooksController extends ActiveController
     public function indexPrepareDataProvider(): ActiveDataProvider
     {
         return new ActiveDataProvider([
-            'query' => Books::find()->published(),
+            'query' => BooksIndex::find()->published(),
             'pagination' => [
                 'pageSize' => Yii::$app->request->get('per-page', 10),
             ],
@@ -92,7 +89,7 @@ class BooksController extends ActiveController
             new OA\Response(
                 response: 200,
                 description: 'Вывод книги',
-                content: new OA\JsonContent(ref: BooksViewResponse::class)
+                content: new OA\JsonContent(ref: BooksView::class)
             ),
             new OA\Response(
                 response: 404,
@@ -112,7 +109,7 @@ class BooksController extends ActiveController
      */
     public function actionView(string $isbn): Books
     {
-        if ($model = Books::findOne(['isbn' => $isbn]))
+        if ($model = BooksView::findOne(['isbn' => $isbn]))
             return $model;
 
         throw new NotFoundHttpException('Книга не найдена.');

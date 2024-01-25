@@ -1,9 +1,9 @@
 <?php
 
-namespace api\models\responses;
+namespace api\models\Books;
 
-use api\models\Books;
 use OpenApi\Attributes as OA;
+
 #[OA\Schema(
     schema: "BookView",
     title: 'Детальный просмотр книги',
@@ -17,7 +17,7 @@ use OpenApi\Attributes as OA;
         new OA\Property(property: "isbn", type: "string", example: "013268327X"),
     ]
 )]
-class BooksViewResponse extends Books
+class BooksView extends Books
 {
     public function fields(): array
     {

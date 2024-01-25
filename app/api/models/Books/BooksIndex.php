@@ -1,8 +1,7 @@
 <?php
 
-namespace api\models\responses;
+namespace api\models\Books;
 
-use api\models\Books;
 use OpenApi\Attributes as OA;
 
 #[OA\Schema(
@@ -19,7 +18,7 @@ use OpenApi\Attributes as OA;
         ]
     )
 )]
-class BooksIndexResponse extends Books
+class BooksIndex extends Books
 {
     public function fields(): array
     {

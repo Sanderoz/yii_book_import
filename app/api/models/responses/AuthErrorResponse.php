@@ -2,8 +2,8 @@
 
 namespace api\models\responses;
 
-use api\models\Books;
 use OpenApi\Attributes as OA;
+
 #[OA\Schema(
     schema: "AuthError",
     title: 'Ошибка авторизации',

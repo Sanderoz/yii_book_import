@@ -3,15 +3,14 @@
 namespace api\controllers;
 
 use api\models\responses\AuthErrorResponse;
-use api\models\responses\BooksIndexResponse;
 use common\components\exceptions\SystemException;
 use common\models\Books;
 use common\models\CartItems;
+use OpenApi\Attributes as OA;
 use Throwable;
 use Yii;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
-use OpenApi\Attributes as OA;
 
 class CartController extends Controller
 {

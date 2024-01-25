@@ -6,24 +6,24 @@
 <li>Реализован функционал оформления заказа (На данный момент заказ создается, очищается корзина, но в банк запросы не идут, т.к. доступов не имею, но методы и сервис для работы с банками готов)</li>
 <li>Реализована репликация бд на master-slave</li>
 <li>Реализовано мини-api для получения книг и работы с корзиной, авторизацией с помощью JWT токена.</li>
-<li>Сгенерирована документация api в swagger (не всё)</li>
+<li>Сгенерирована документация api в swagger</li>
 </ol> 
 
 <ol>Планы:
-<li>Создание unit-тестов</li>
+<li>Тестирование</li>
 </ol>
 
 <ol>Для поднятия проекта:
-<li>docker-compose up --build</li>
-<li>docker exec -it import php yii migrate</li>
-<li>docker exec -it import php yii import<br>
+<li>docker-compose up -d --build</li>
+<li>docker exec -it cli php yii migrate</li>
+<li>docker exec -it cli php yii import<br>
 </ol>
 <ul>
 Если rabbitMq не будет обрабатывать очередь самостоятельно - необходимо подтолкнуть:
-<li>docker exec -it import php yii queue/listen</li>
+<li>docker exec -it cli php yii queue/listen</li>
 </ul>
 <ul>Для генерации документации:
-<li>docker exec -it import php yii swagger/generate</li>
+<li>docker exec -it cli php yii swagger/generate</li>
 </ul>
 
 <ol>Логины пароли:

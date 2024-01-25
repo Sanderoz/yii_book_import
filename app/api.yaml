@@ -1,0 +1,291 @@
+openapi: 3.1.0
+info:
+  title: 'Book shop'
+  description: 'Small bookstore'
+  version: 1.0.0
+paths:
+  /auth/get-token:
+    post:
+      tags:
+        - auth
+      summary: 'Получение jwt токена'
+      operationId: dedb0c2555a061de3f75c04a37f8109d
+      parameters:
+        -
+          name: username
+          in: query
+          required: true
+          schema:
+            type: string
+          example: user
+        -
+          name: password
+          in: query
+          required: true
+          schema:
+            type: string
+          example: user
+      responses:
+        '200':
+          description: 'Успешный ответ'
+          content:
+            application/json:
+              schema:
+                properties:
+                  jwt: { type: string, example: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJib29rX3N0b3JlIiwic3ViIjoxLCJpYXQiOjE3MDYyMDIwMDYsImV4cCI6MTcwNjIwOTIwNn0.urE_F0EseDyAKIszfGuYtj5614WhBt81GsRQbX0toeg }
+                  refresh: { type: string, example: ZK568TYV3zUjdp7HBLEXJ7l35RATeT5w }
+                type: object
+        '401':
+          description: Ошибка
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthError'
+  /auth/get-token-by-refresh:
+    post:
+      tags:
+        - auth
+      summary: 'Получение jwt токена по refresh-токену'
+      operationId: c7e292f132eae3a9ccf60db6a5cfd6c7
+      parameters:
+        -
+          name: X-Refresh-Token
+          in: header
+          required: true
+          schema:
+            type: string
+          example: 6eFX2h470Khge0KIEHE2fPaW_LbrXGpA
+      responses:
+        '200':
+          description: 'Успешный ответ'
+          content:
+            application/json:
+              schema:
+                properties:
+                  jwt: { type: string, example: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJib29rX3N0b3JlIiwic3ViIjoxLCJpYXQiOjE3MDYyMDIwMDYsImV4cCI6MTcwNjIwOTIwNn0.urE_F0EseDyAKIszfGuYtj5614WhBt81GsRQbX0toeg }
+                  refresh: { type: string, example: ZK568TYV3zUjdp7HBLEXJ7l35RATeT5w }
+                type: object
+        '401':
+          description: Ошибка
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthError'
+  /books:
+    get:
+      tags:
+        - books
+      summary: 'Книги в сокращенном виде'
+      operationId: 98b223f5f8727b65723402212adfa0f8
+      responses:
+        '200':
+          description: 'Получение книг'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookIndex'
+  '/books/{isbn}':
+    get:
+      tags:
+        - books
+      summary: 'Детальный просмотр книги'
+      operationId: f0bc4ccc45ce0ab30537c586357ce50c
+      responses:
+        '200':
+          description: 'Вывод книги'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookView'
+        '404':
+          description: 'Книга не найдена'
+          content:
+            application/json:
+              schema:
+                properties:
+                  name: { type: string, example: 'Not Found' }
+                  message: { type: string, example: 'Книга не найдена.' }
+                  status: { type: integer, format: int64, example: 404 }
+                type: object
+  '/cart/add/{isbn}':
+    post:
+      tags:
+        - cart
+      summary: 'Добавление книги в корзину покупателя'
+      operationId: 5f4d6ec698213feb4a157903abc1e529
+      parameters:
+        -
+          name: isbn
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'Успешный ответ'
+          content:
+            application/json:
+              schema:
+                description: 'Количество в корзине'
+              example: 3
+        '401':
+          description: Ошибка
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthError'
+      security:
+        -
+          bearerAuth: []
+  '/cart/minus/{isbn}':
+    post:
+      tags:
+        - cart
+      summary: 'Уменьшение количества книг в корзинк покупателя на 1/удаление всех'
+      operationId: 01519e75c33d87d441c4dc957de7b0c8
+      parameters:
+        -
+          name: isbn
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: all
+          in: query
+          description: 'При значении 1 - удаляет переданную книгу из корзины'
+          required: false
+          schema:
+            type: integer
+            example: 0
+      responses:
+        '200':
+          description: 'Успешный ответ'
+          content:
+            application/json:
+              schema:
+                description: 'Количество данных книг в корзине'
+              example: 2
+        '401':
+          description: Ошибка
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthError'
+      security:
+        -
+          bearerAuth: []
+  /cart/clear:
+    post:
+      tags:
+        - cart
+      summary: 'Полная очистка корзины'
+      operationId: f39c886d91d9ccb9d06dd16d295c15ab
+      responses:
+        '200':
+          description: 'Успешный ответ'
+          content:
+            application/json:
+              schema: {  }
+              example: true
+        '401':
+          description: Ошибка
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthError'
+      security:
+        -
+          bearerAuth: []
+components:
+  schemas:
+    BookIndex:
+      title: 'Сокращенный вывод книг'
+      type: array
+      items:
+        properties:
+          price:
+            type: integer
+            format: int64
+            example: 50000
+          title:
+            type: string
+            example: 'Personal Videoconferencing'
+          shortDescription:
+            type: string
+            example: '"Personal Videoconferencing is having an enormous impact on business. Evan Rosen has quantified that impact with examples of real world implementations and provided a primer on how businesses can achieve this competitive advantage for themselves."  --Frank Gill, Executive Vice President, Internet and Communications Group, Intel    "The book is very good: it is clear and the examples of user applications are excellent"  --Ralph Ungermann, CEO, First Virtual Corporation '
+          publishedDate:
+            type: string
+            format: date-time
+            example: '1996-06-01'
+          isbn:
+            type: string
+            example: 013268327X
+        type: object
+    BookView:
+      title: 'Детальный просмотр книги'
+      properties:
+        price:
+          type: integer
+          format: int64
+          example: 50000
+        pageCount:
+          type: integer
+          format: int64
+          example: 420
+        title:
+          type: string
+          example: 'Personal Videoconferencing'
+        shortDescription:
+          type: string
+          example: '"Personal Videoconferencing is having an enormous impact on business. Evan Rosen has quantified that impact with examples of real world implementations and provided a primer on how businesses can achieve this competitive advantage for themselves."  --Frank Gill, Executive Vice President, Internet and Communications Group, Intel    "The book is very good: it is clear and the examples of user applications are excellent"  --Ralph Ungermann, CEO, First Virtual Corporation '
+        longDescription:
+          type: string
+          example: 'The first book on the most powerful communication tool since the development of the personal computer, Personal Videoconferencing will help you streamline your business and gain a competitive edge. It summarizes the experience of more than seventy companies in many industries in the use of desktop and laptop videoconferencing to collaborate on documents and applications while communicating through video, face-to-face. Anyone who shares information with others will benefit from reading this book.  '
+        publishedDate:
+          type: string
+          format: date-time
+          example: '1996-06-01'
+        isbn:
+          type: string
+          example: 013268327X
+      type: object
+    AuthError:
+      title: 'Ошибка авторизации'
+      properties:
+        name:
+          type: string
+          example: Unauthorized
+        message:
+          type: string
+          example: 'Your request was made with invalid credentials.'
+        code:
+          type: integer
+          format: int64
+          example: 0
+        status:
+          type: integer
+          format: int64
+          example: 401
+        type:
+          type: string
+          example: yii\web\UnauthorizedHttpException
+      type: object
+  securitySchemes:
+    bearerAuth:
+      type: http
+      description: 'Bearer token'
+      name: Authorization
+      in: header
+      bearerFormat: JWT
+      scheme: bearer
+security:
+  -
+    securityScheme: bearerAuth
+    type: http
+    bearerFormat: JWT
+    scheme: bearer
+tags:
+  -
+    name: books
+    description: 'Получение информации о книгах'

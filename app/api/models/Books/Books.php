@@ -1,9 +1,8 @@
 <?php
 
-namespace api\models;
+namespace api\models\Books;
 
-use Yii;
-use OpenApi\Attributes as OA;
+use api\models\BooksQuery;
 
 class Books extends \common\models\Books
 {
