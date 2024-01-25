@@ -46,12 +46,12 @@ services:
       - php
       - mysql-master
 
-  import:
+  cli:
     build:
       context: .
-      dockerfile: settings/dockerfiles/import.Dockerfile
-    command: sh -c "php yii queue/listen"
-    container_name: import
+      dockerfile: settings/dockerfiles/cli.Dockerfile
+#    command: sh -c "php yii queue/listen"
+    container_name: cli
     restart: always
     env_file:
       - ./.env

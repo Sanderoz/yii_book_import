@@ -24,10 +24,9 @@ RUN pecl install amqp imagick && docker-php-ext-enable amqp imagick
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd
 
-#COPY ./settings/supervisor/supervisor.conf /etc/supervisor/conf.d/supervisor.conf
 COPY ./settings/php-fpm/php.ini /usr/local/etc/php/php.ini
 COPY ./app /var/www/html/
-RUN rm -rf /var/www/html/api
+#RUN rm -rf /var/www/html/api
 
 WORKDIR /var/www/html
 
@@ -42,5 +41,3 @@ USER myuser
 #RUN chown -R www-data:www-data ./frontend/web ./backend/web
 
 EXPOSE 9000
-
-#CMD ["supervisord", "-n"]

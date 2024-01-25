@@ -5,4 +5,5 @@ log-slave-updates = 0
 enforce-gtid-consistency
 server_id=1
 replicate-do-db = yii2advanced
-sync_binlog = 0
+sync_binlog=0
+binlog_format=STATEMENT
