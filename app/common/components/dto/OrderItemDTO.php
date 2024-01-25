@@ -13,5 +13,5 @@ class OrderItemDTO extends BaseDTO
     #[Required]
     public int $count;
     #[Required]
-    public int $bookIsbn;
+    public string $bookIsbn;
 }
