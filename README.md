@@ -31,3 +31,7 @@
 <li>логин: user, пароль: user</li>
 </ol>
 
+<ol>
+<li>Сайт: http://localhost:8080</li>
+<li>Админка: http://localhost:8080/admin/login</li>
+</ol>

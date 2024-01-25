@@ -17,6 +17,7 @@ use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\filters\AccessControl;
+use yii\filters\PageCache;
 use yii\filters\VerbFilter;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
@@ -54,6 +55,14 @@ class SiteController extends Controller
                     'logout' => ['post'],
                 ],
             ],
+            [
+                'class' => PageCache::class,
+                'only' => ['index'],
+                'duration' => 60,
+                'variations' => [
+                    Yii::$app->request->get('page', 1),
+                ],
+            ],
         ];
     }
 
@@ -72,7 +81,6 @@ class SiteController extends Controller
             ],
         ];
     }
-
 
     public function actionIndex(int $parent = 0): string
     {

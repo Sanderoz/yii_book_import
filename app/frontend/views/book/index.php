@@ -2,11 +2,13 @@
 
 /**
  * @var yii\web\View $this
- * @var \common\models\Books $book
+ * @var Books $book
  * @var array $cartItems
  */
 
-$this->title = $book->title;
+use common\models\Books;
+
+$this->title = empty($book) ? 'Просмотр книги' : $book->title;
 ?>
 <div class="book-index">
     <div class="row">
